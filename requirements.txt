@@ -1,0 +1,15 @@
+attrs==25.1.0
+canmatrix==1.0
+certifi==2024.12.14
+charset-normalizer==3.4.1
+click==8.1.8
+colorama==0.4.6
+future==1.0.0
+idna==3.10
+py_canoe==3.0.2
+pywin32==308
+requests==2.32.3
+robotframework==7.2
+robotframework-requests==0.9.7
+six==1.17.0
+urllib3==2.3.0
