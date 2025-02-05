@@ -17,7 +17,7 @@ ${POWER_VAR}                PS::power_on_off_EA9040
 ${POWER_VOL_MEAS}           PS::voltage_display_meas_EA9040
 ${EXPECTED_VOLT}            14.50
 ${TOLERANCE}                2.80
-${HIL_MODE}                 5  # Carmksr Mode for HIL Mode
+${HIL_MODE}                 4  # Carmksr Mode for HIL Mode
 ${HIL_MODE_VAR}             hil_ctrl::hil_mode  # Make sure this is defined in CANoe config
 ${TIMEOUT}                  5  # Timeout in seconds for comparison
 ${Test_Run}                 drv/CTA/CTA_90_Deg_Road_Side_Parking_Staright_Road.trn
