@@ -5,6 +5,7 @@ Created on Wed Jan 29 11:09:20 2025
 @author: RZP2KOR
 """
 
+import pyautogui
 from py_canoe import CANoe, wait
 from robot.api.deco import library, keyword
 
@@ -56,3 +57,11 @@ class Canoelibrary:
     def call_capl_fun(self,fun_name,*arguments):
         """This is for calling any CAPL Function in Python with required Parameter to that CAPL function"""
         self.canoe_inst.call_capl_function(fun_name,*arguments)
+
+    @keyword
+    def press_keyboard_key(self, keyname):
+        """This function simulates pressing the key from the keyboard."""
+        wait(5)
+        pyautogui.keyDown(keyname)  # Fixed: add the pyautogui reference
+        pyautogui.keyUp(keyname)    # Optionally release the key after pressing
+        print(f"Key '{keyname}' has been pressed and released.")

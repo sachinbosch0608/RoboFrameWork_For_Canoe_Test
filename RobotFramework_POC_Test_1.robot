@@ -20,9 +20,11 @@ ${TOLERANCE}                2.80
 ${HIL_MODE}                 4  # Carmksr Mode for HIL Mode
 ${HIL_MODE_VAR}             hil_ctrl::hil_mode  # Make sure this is defined in CANoe config
 ${TIMEOUT}                  5  # Timeout in seconds for comparison
-${Test_Run}                 drv/CTA/CTA_90_Deg_Road_Side_Parking_Staright_Road.trn
+${Test_Run}                 drv/SOD/CTX/CTA_90_Deg_Road_Side_Parking_Staright_Road.trn
 ${Load_CM_Scenario}         Customer_specific::cm_scenario
-${Load_CM_Scenario_Done}    hil_ctrl::init_cm_scenario_done
+${Load_CM_Scenario_Done}    Customer_specific::load_scenario
+${KEY_NAME_ENTER}           enter
+${KEY_NAME_RIGHT}           right
 
 *** Test Cases ***
 
@@ -43,14 +45,21 @@ Test Set And Get System Variables For HIL Mode
     [Documentation]    Verifies setting and comparing HIL Mode system variable.
     Set System Variable    ${HIL_MODE_VAR}    ${HIL_MODE}
     Compare System Variable Value    ${HIL_MODE_VAR}    ${HIL_MODE}    ${TOLERANCE}    ${TIMEOUT}
+    Sleep    20        #Ensure that all the Test Runs gets copied to shared location in VT bench
 
 Test Loading Carmaker Test Scenario
     [Documentation]    Verifies setting the test scenario and running the measurement.
     Set System Variable    ${Load_CM_Scenario}    ${Test_Run}
-	Sleep  4
+	Sleep     5         # Allow time to load scenario or Test Run in Carmaker
+	Set Key Press   ${KEY_NAME_ENTER}       # This is to enable Load Button in RBS and Backspace is needed to load .trn
+	Sleep     3
     Set System Variable    ${Load_CM_Scenario_Done}    1
+    Sleep     15
     Stop Measurement
+    Sleep     2
     Quit Canoe
+    Sleep     2
+
 
 *** Keywords ***
 
@@ -120,3 +129,11 @@ Get Time Difference
     ${timestamp}=    Evaluate    time.time()
     ${difference}=    Evaluate    ${timestamp} - ${start_time}
     [Return]    ${difference}
+
+Set Key Press
+    [Arguments]    ${key_name}
+    Press Keyboard Key    ${key_name}
+    Log    Press Keyboard Key    ${key_name} to ${key_name}
+
+
+
