@@ -1,0 +1,25 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  #include ".\adas_sim\99_SUBM\fd3_test_common_lib\99_SUBM\test_common_lib\CAPL_includes\XCP\XCP_Generic.can"
+}
+
+variables
+{
+  char ECU_name[10]="APU";
+  char var_name[100]="ActivityPostProc_activity.g_fifaThreatAssessmentIn.m_fifaThreatAssessmentDataOutput.m_fifaThreatAssessmentCtaOutput.TA_CTA_ThreatConfLeft_ve";
+  long connectionTimeout = 5000;   // Timeout in ms
+}
+
+
+
+
+void MainTest ()
+{
+   testWaitForTimeout(5);
+   cTF_Activate_XCP_Read_DAQ(var_name,ECU_name,connectionTimeout);
+   testWaitForTimeout(1);
+   cTF_Connect_XCP(ECU_name,connectionTimeout);
+   testWaitForTimeout(1);
+}
+

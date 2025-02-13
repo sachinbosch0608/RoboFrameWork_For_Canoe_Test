@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<systemvariables version="4">
+  <namespace name="" comment="" interface="">
+    <namespace name="Obejct_Vehicle_Speed" comment="" interface="">
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="kmph" separateTransmissions="true" context="CANoe" name="Target_Veh_0" comment="" bitcount="64" isSigned="true" encoding="65001" type="float" startValue="0" minValue="0" maxValue="350" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="kmph" separateTransmissions="true" context="CANoe" name="Target_Veh_1" comment="" bitcount="64" isSigned="true" encoding="65001" type="float" startValue="0" minValue="0" maxValue="350" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="kmph" separateTransmissions="true" context="CANoe" name="Target_Veh_2" comment="" bitcount="64" isSigned="true" encoding="65001" type="float" startValue="0" minValue="0" maxValue="350" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="kmph" separateTransmissions="true" context="CANoe" name="Target_Veh_3" comment="" bitcount="64" isSigned="true" encoding="65001" type="float" startValue="0" minValue="0" maxValue="350" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="kmph" separateTransmissions="true" context="CANoe" name="Target_Veh_Speed_Read_0" comment="" bitcount="64" isSigned="true" encoding="65001" type="float" startValue="0" minValue="0" maxValue="350" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="kmph" separateTransmissions="true" context="CANoe" name="Target_Veh_Speed_Read_1" comment="" bitcount="64" isSigned="true" encoding="65001" type="float" startValue="0" minValue="0" maxValue="350" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="kmph" separateTransmissions="true" context="CANoe" name="Target_Veh_Speed_Read_2" comment="" bitcount="64" isSigned="true" encoding="65001" type="float" startValue="0" minValue="0" maxValue="350" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="kmph" separateTransmissions="true" context="CANoe" name="Target_Veh_Speed_Read_3" comment="" bitcount="64" isSigned="true" encoding="65001" type="float" startValue="0" minValue="0" maxValue="350" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="" separateTransmissions="true" context="CANoe" name="Target_Veh_Status_0" comment="" bitcount="64" isSigned="true" encoding="65001" type="longlong" startValue="0" minValue="0" minValuePhys="0" maxValue="255" maxValuePhys="255" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="" separateTransmissions="true" context="CANoe" name="Target_Veh_Status_1" comment="" bitcount="64" isSigned="true" encoding="65001" type="longlong" startValue="0" minValue="0" minValuePhys="0" maxValue="255" maxValuePhys="255" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="" separateTransmissions="true" context="CANoe" name="Target_Veh_Status_2" comment="" bitcount="64" isSigned="true" encoding="65001" type="longlong" startValue="0" minValue="0" minValuePhys="0" maxValue="255" maxValuePhys="255" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="" separateTransmissions="true" context="CANoe" name="Target_Veh_Status_3" comment="" bitcount="64" isSigned="true" encoding="65001" type="longlong" startValue="0" minValue="0" minValuePhys="0" maxValue="255" maxValuePhys="255" />
+    </namespace>
+  </namespace>
+</systemvariables>

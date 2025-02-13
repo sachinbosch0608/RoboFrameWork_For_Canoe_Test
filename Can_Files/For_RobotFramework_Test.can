@@ -1,0 +1,56 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  #include ".\adas_sim\99_SUBM\fd3_test_common_lib\99_SUBM\test_common_lib\CAPL_includes\XCP\XCP_Generic.can"
+}
+
+variables
+{
+  char ECU_name[10]="APU";
+  char var_name[100]="ActivityPostProc_activity.g_fifaThreatAssessmentIn.m_fifaThreatAssessmentDataOutput.m_fifaThreatAssessmentCtaOutput.TA_CTA_ThreatConfLeft_ve";
+  long connectionTimeout = 5000;   // Timeout in ms
+}
+
+	
+void call_Robo_Fun_connect_xcp_and_activate_DAQ(char var_name[],char ECU_name[],long connectionTimeout)
+{
+  cTF_Activate_XCP_Read_DAQ(var_name,ECU_name,connectionTimeout);
+  cTF_Connect_XCP(ECU_name,connectionTimeout);
+ 
+}
+
+void call_Robo_Fun_disconnect_xcp_and_deactivate_DAQ(char var_name[],char ECU_name[],long connectionTimeout)
+{
+  cTF_Disconnect_XCP(ECU_name,connectionTimeout);
+  cTF_Deativate_XCP_Read_DAQ(var_name,ECU_name,connectionTimeout);   
+}
+
+on sysvar_update sysvar::Obejct_Vehicle_Speed::Target_Veh_0
+{  
+  // Setting Target Vehicle speed and status Value
+   @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_target_a_long[0]= @sysvar::Obejct_Vehicle_Speed::Target_Veh_0;
+   @sysvarMember::Classe_Obj_Sim::obj_ctrl.ctrl_status_velocity[0] = @sysvar::Obejct_Vehicle_Speed::Target_Veh_Status_0;
+  // Reading Target Vehicle speed
+   @sysvar::Obejct_Vehicle_Speed::Target_Veh_0= @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_v_long[0];
+   @sysvar::Obejct_Vehicle_Speed::Target_Veh_Speed_Read_0= @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_v_long[0];
+}
+
+on sysvar_update sysvar::Obejct_Vehicle_Speed::Target_Veh_1
+{
+  // Setting Target Vehicle speed and status Value
+   @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_target_a_long[1]= @sysvar::Obejct_Vehicle_Speed::Target_Veh_1;
+   @sysvarMember::Classe_Obj_Sim::obj_ctrl.ctrl_status_velocity[1] = @sysvar::Obejct_Vehicle_Speed::Target_Veh_Status_1;
+  // Reading Target Vehicle speed
+   @sysvar::Obejct_Vehicle_Speed::Target_Veh_1= @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_target_a_long[1];
+   @sysvar::Obejct_Vehicle_Speed::Target_Veh_Speed_Read_1= @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_v_long[1];
+}
+
+
+void MainTest ()
+{
+   testWaitForTimeout(5);
+   //cTF_Connect_XCP(ECU_name,connectionTimeout);
+   call_Robo_Fun_connect_xcp_and_activate_DAQ(var_name,ECU_name,connectionTimeout);
+   testWaitForTimeout(15);
+}
+
