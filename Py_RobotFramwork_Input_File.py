@@ -59,9 +59,19 @@ class Canoelibrary:
         self.canoe_inst.call_capl_function(fun_name,*arguments)
 
     @keyword
+    def call_xcp_connection(self,capl_test_module_name):
+        """This Function is for Calling CAPL Test Module and Execute them"""
+        self.canoe_inst.execute_test_module(capl_test_module_name)
+        wait(5)
+
+    @keyword
     def press_keyboard_key(self, keyname):
         """This function simulates pressing the key from the keyboard."""
         wait(5)
         pyautogui.keyDown(keyname)  # Fixed: add the pyautogui reference
         pyautogui.keyUp(keyname)    # Optionally release the key after pressing
         print(f"Key '{keyname}' has been pressed and released.")
+
+
+
+

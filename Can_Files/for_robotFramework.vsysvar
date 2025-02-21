@@ -14,6 +14,8 @@
       <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="" separateTransmissions="true" context="CANoe" name="Target_Veh_Status_1" comment="" bitcount="64" isSigned="true" encoding="65001" type="longlong" startValue="0" minValue="0" minValuePhys="0" maxValue="255" maxValuePhys="255" />
       <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="" separateTransmissions="true" context="CANoe" name="Target_Veh_Status_2" comment="" bitcount="64" isSigned="true" encoding="65001" type="longlong" startValue="0" minValue="0" minValuePhys="0" maxValue="255" maxValuePhys="255" />
       <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="" separateTransmissions="true" context="CANoe" name="Target_Veh_Status_3" comment="" bitcount="64" isSigned="true" encoding="65001" type="longlong" startValue="0" minValue="0" minValuePhys="0" maxValue="255" maxValuePhys="255" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="Bool" separateTransmissions="true" context="CANoe" name="XCP_Connection_Failed" comment="" bitcount="32" isSigned="true" encoding="65001" type="int" startValue="0" minValue="0" minValuePhys="0" maxValue="2" maxValuePhys="2" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="Bool" separateTransmissions="true" context="CANoe" name="XCP_Connection_Success" comment="" bitcount="32" isSigned="true" encoding="65001" type="int" startValue="0" minValue="0" minValuePhys="0" maxValue="2" maxValuePhys="2" />
     </namespace>
   </namespace>
 </systemvariables>

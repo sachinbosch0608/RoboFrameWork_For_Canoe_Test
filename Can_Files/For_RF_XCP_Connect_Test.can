@@ -7,8 +7,9 @@ includes
 variables
 {
   char ECU_name[10]="APU";
-  char var_name[100]="ActivityPostProc_activity.g_fifaThreatAssessmentIn.m_fifaThreatAssessmentDataOutput.m_fifaThreatAssessmentCtaOutput.TA_CTA_ThreatConfLeft_ve";
+  char var_name[100];
   long connectionTimeout = 5000;   // Timeout in ms
+  int64 status_xcp=0;
 }
 
 
@@ -16,10 +17,20 @@ variables
 
 void MainTest ()
 {
+   @sysvar::Obejct_Vehicle_Speed::XCP_Connection_Success=0;
    testWaitForTimeout(5);
    cTF_Activate_XCP_Read_DAQ(var_name,ECU_name,connectionTimeout);
    testWaitForTimeout(1);
    cTF_Connect_XCP(ECU_name,connectionTimeout);
-   testWaitForTimeout(1);
+   testWaitForTimeout(4);
+
+   status_xcp=xcpIsConnected(ECU_name);
+   if(status_xcp==1)
+   {
+     @sysvar::Obejct_Vehicle_Speed::XCP_Connection_Success=1;
+     testWaitForTimeout(1);
+   }
+   
+    
 }
 
