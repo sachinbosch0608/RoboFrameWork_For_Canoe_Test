@@ -6,7 +6,7 @@ Created on Wed Jan 29 11:10:47 2025
 """
 
 *** Settings ***
-Library    Py_RobotFramwork_Input_File.py  # Import your custom Python library (adjust the path if necessary)
+Library    ./Lib_Files/Py_RobotFramwork_Input_File.py  # Import your custom Python library (adjust the path if necessary)
 Library    OperatingSystem
 Library    DateTime
 
