@@ -1,0 +1,3198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.12.5 on win32)" generated="2025-02-22T07:26:24.689488" rpa="false" schemaversion="5">
+<suite id="s1" name="RobotFramework POC Test 1" source="D:\Users\rzp2kor\python_prj\RobotFramework_POC_Test_1.robot">
+<test id="s1-t1" name="Test Open Canoe Configuration" line="65">
+<kw name="Open Canoe Instance">
+<kw name="Open Canoe" owner="Py_RobotFramwork_Input_File">
+<arg>${config_path}</arg>
+<doc>Open CANoe configuration.</doc>
+<status status="PASS" start="2025-02-22T07:26:24.993981" elapsed="104.620277"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:28:09.614258" level="INFO">Successfully opened CANoe configuration from D:/_rbs/ADAS_HIL_FD301_TOL1_1_0_RA6_V15.1.3/RBS_Ford_Dat3.cfg</msg>
+<arg>Successfully opened CANoe configuration from ${config_path}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:28:09.614258" elapsed="0.000000"/>
+</kw>
+<arg>${CONFIG_PATH}</arg>
+<status status="PASS" start="2025-02-22T07:26:24.993981" elapsed="104.620277"/>
+</kw>
+<kw name="Should Exist" owner="OperatingSystem">
+<msg time="2025-02-22T07:28:09.616009" level="INFO" html="true">Path '&lt;a href="file://D:\_rbs\ADAS_HIL_FD301_TOL1_1_0_RA6_V15.1.3\RBS_Ford_Dat3.cfg"&gt;D:\_rbs\ADAS_HIL_FD301_TOL1_1_0_RA6_V15.1.3\RBS_Ford_Dat3.cfg&lt;/a&gt;' exists.</msg>
+<arg>${CONFIG_PATH}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<status status="PASS" start="2025-02-22T07:28:09.614968" elapsed="0.001041"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:28:09.616009" level="INFO">Test Passed: Opened CANoe configuration from D:/_rbs/ADAS_HIL_FD301_TOL1_1_0_RA6_V15.1.3/RBS_Ford_Dat3.cfg</msg>
+<arg>Test Passed: Opened CANoe configuration from ${CONFIG_PATH}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:28:09.616009" elapsed="0.000000"/>
+</kw>
+<kw name="Start Measurement">
+<kw name="Start Measurement Init" owner="Py_RobotFramwork_Input_File">
+<doc>Start the measurement in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:28:09.616009" elapsed="64.428952"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:29:14.045963" level="INFO">Measurement started.</msg>
+<arg>Measurement started.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:29:14.044961" elapsed="0.001002"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:28:09.616009" elapsed="64.429954"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:29:19.046463" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:29:14.045963" elapsed="5.000500"/>
+</kw>
+<kw name="Start Measurement">
+<kw name="Start Measurement Init" owner="Py_RobotFramwork_Input_File">
+<doc>Start the measurement in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:29:19.046463" elapsed="44.620725"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:03.668187" level="INFO">Measurement started.</msg>
+<arg>Measurement started.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:03.668187" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:29:19.046463" elapsed="44.621724"/>
+</kw>
+<doc>Verifies that the CANoe configuration is loaded correctly.</doc>
+<status status="PASS" start="2025-02-22T07:26:24.993476" elapsed="218.674711"/>
+</test>
+<test id="s1-t2" name="Test Set And Get System Variables For ECU Power" line="74">
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:03.670188" elapsed="1.168400"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:04.838588" level="INFO">Set system variable DS2824::IO_1_Switch to 1</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:04.838588" elapsed="0.000000"/>
+</kw>
+<arg>${POWER_VAR}</arg>
+<arg>1</arg>
+<status status="PASS" start="2025-02-22T07:30:03.669202" elapsed="1.169893"/>
+</kw>
+<kw name="Compare System Variable Value">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:04.839095" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:04.839095" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:30:05.840381" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:30:04.840099" elapsed="1.000282"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:30:05.846419" level="INFO">${actual_value} = 0.0</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:05.840381" elapsed="0.006038"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T07:30:05.846419" level="INFO">${diff} = 14.5</msg>
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T07:30:05.846419" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:05.847419" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:05.847419" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="PASS" start="2025-02-22T07:30:05.847419" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2025-02-22T07:30:05.846419" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:05.846419" elapsed="0.001000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:30:05.846419" elapsed="0.001000"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:05.847419" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:30:05.847419" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:30:05.847419" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:30:05.847419" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:30:05.847419" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:05.846419" elapsed="0.001000"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-22T07:30:04.840099" elapsed="1.007320"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${TIMEOUT_For_Compare}</value>
+<status status="PASS" start="2025-02-22T07:30:04.839095" elapsed="1.008324"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:05.847419" level="INFO">Value of found: True this is after Breaking the Loop.</msg>
+<arg>Value of found: ${found} this is after Breaking the Loop.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:05.847419" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${found}'== 'True'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:05.848415" level="INFO">PASS: PS::voltage_display_meas_EA9040 reached expected value 14.50 within timeout, found Actual value 0.0</msg>
+<arg>PASS: ${var_name} reached expected value ${expected_value} within timeout, found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:05.848415" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:30:05.848415" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:05.848415" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:30:05.848415" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:05.848415" elapsed="0.000000"/>
+</if>
+<arg>${POWER_VOL_MEAS}</arg>
+<arg>${EXPECTED_VOLT}</arg>
+<arg>${TOLERANCE}</arg>
+<arg>${TIMEOUT}</arg>
+<status status="PASS" start="2025-02-22T07:30:04.839095" elapsed="1.009320"/>
+</kw>
+<doc>Verifies setting and comparing ECU power voltage system variable.</doc>
+<status status="PASS" start="2025-02-22T07:30:03.669202" elapsed="2.179213"/>
+</test>
+<test id="s1-t3" name="Test Set Hil Config and Radar States" line="80">
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:05.850419" elapsed="1.005678"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:06.856097" level="INFO">Set system variable hil_ctrl::configuration_ford to 3</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:06.856097" elapsed="0.000000"/>
+</kw>
+<arg>${Hil_Config_Mode}</arg>
+<arg>3</arg>
+<status status="PASS" start="2025-02-22T07:30:05.849419" elapsed="1.006678"/>
+</kw>
+<kw name="Compare System Variable Value">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:06.857134" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:06.857134" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:30:07.857617" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:30:06.857134" elapsed="1.000483"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:30:07.862626" level="INFO">${actual_value} = 3</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:07.857617" elapsed="0.005009"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:07.862626" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:07.862626" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:30:07.862626" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:30:07.862626" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:30:07.862626" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:30:07.862626" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:07.862626" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:07.862626" elapsed="0.000999"/>
+</kw>
+<break>
+<status status="PASS" start="2025-02-22T07:30:07.863625" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2025-02-22T07:30:07.862626" elapsed="0.000999"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:07.862626" elapsed="0.000999"/>
+</if>
+<status status="PASS" start="2025-02-22T07:30:07.862626" elapsed="0.000999"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:07.862626" elapsed="0.000999"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-22T07:30:06.857134" elapsed="1.006491"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${TIMEOUT_For_Compare}</value>
+<status status="PASS" start="2025-02-22T07:30:06.857134" elapsed="1.006491"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:07.863625" level="INFO">Value of found: True this is after Breaking the Loop.</msg>
+<arg>Value of found: ${found} this is after Breaking the Loop.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:07.863625" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${found}'== 'True'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:07.863625" level="INFO">PASS: hil_ctrl::configuration_ford reached expected value 3 within timeout, found Actual value 3</msg>
+<arg>PASS: ${var_name} reached expected value ${expected_value} within timeout, found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:07.863625" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:30:07.863625" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:07.863625" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:30:07.863625" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:07.863625" elapsed="0.000000"/>
+</if>
+<arg>${Hil_Config_Mode}</arg>
+<arg>3</arg>
+<arg>${None}</arg>
+<arg>${TIMEOUT}</arg>
+<status status="PASS" start="2025-02-22T07:30:06.856097" elapsed="1.007528"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:07.864626" elapsed="1.003320"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:08.867946" level="INFO">Set system variable hil_ctrl::radar_fc_loc_sim to 0</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:08.867946" elapsed="0.000000"/>
+</kw>
+<arg>${Radar_Fc_loc_Sim}</arg>
+<arg>0</arg>
+<status status="PASS" start="2025-02-22T07:30:07.864626" elapsed="1.003320"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:08.868483" elapsed="1.006831"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:09.875818" level="INFO">Set system variable hil_ctrl::radar_fl_loc_sim to 1</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:09.875314" elapsed="0.000504"/>
+</kw>
+<arg>${Radar_Fl_loc_Sim}</arg>
+<arg>1</arg>
+<status status="PASS" start="2025-02-22T07:30:08.868483" elapsed="1.007335"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:09.875818" elapsed="1.006806"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:10.882624" level="INFO">Set system variable hil_ctrl::radar_fr_loc_sim to 1</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:10.882624" elapsed="0.000000"/>
+</kw>
+<arg>${Radar_Fr_loc_Sim}</arg>
+<arg>1</arg>
+<status status="PASS" start="2025-02-22T07:30:09.875818" elapsed="1.006806"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:10.882624" elapsed="1.004878"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:11.887502" level="INFO">Set system variable hil_ctrl::radar_rl_loc_sim to 1</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:11.887502" elapsed="0.000000"/>
+</kw>
+<arg>${Radar_rl_loc_Sim}</arg>
+<arg>1</arg>
+<status status="PASS" start="2025-02-22T07:30:10.882624" elapsed="1.004878"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:11.887502" elapsed="1.007790"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:12.895292" level="INFO">Set system variable hil_ctrl::radar_rr_loc_sim to 1</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:12.895292" elapsed="0.000000"/>
+</kw>
+<arg>${Radar_rr_loc_Sim}</arg>
+<arg>1</arg>
+<status status="PASS" start="2025-02-22T07:30:11.887502" elapsed="1.007790"/>
+</kw>
+<kw name="Compare System Variable Value">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:12.896297" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:12.896297" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:30:13.896925" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:30:12.896297" elapsed="1.000628"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:30:13.902938" level="INFO">${actual_value} = 0</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:13.896925" elapsed="0.006013"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:13.902938" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:13.902938" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:30:13.902938" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:30:13.902938" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:30:13.902938" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:30:13.902938" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:13.903938" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:13.903938" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="PASS" start="2025-02-22T07:30:13.903938" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2025-02-22T07:30:13.902938" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:13.902938" elapsed="0.001000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:30:13.902938" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:13.902938" elapsed="0.001000"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-22T07:30:12.896297" elapsed="1.007641"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${TIMEOUT_For_Compare}</value>
+<status status="PASS" start="2025-02-22T07:30:12.896297" elapsed="1.007641"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:13.903938" level="INFO">Value of found: True this is after Breaking the Loop.</msg>
+<arg>Value of found: ${found} this is after Breaking the Loop.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:13.903938" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${found}'== 'True'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:13.903938" level="INFO">PASS: hil_ctrl::radar_fc_loc_sim reached expected value 0 within timeout, found Actual value 0</msg>
+<arg>PASS: ${var_name} reached expected value ${expected_value} within timeout, found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:13.903938" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:30:13.903938" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:13.904938" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:30:13.903938" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:13.903938" elapsed="0.001000"/>
+</if>
+<arg>${Radar_Fc_loc_Sim}</arg>
+<arg>0</arg>
+<arg>${None}</arg>
+<arg>${TIMEOUT}</arg>
+<status status="PASS" start="2025-02-22T07:30:12.896297" elapsed="1.008641"/>
+</kw>
+<kw name="Compare System Variable Value">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:13.905669" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:13.905669" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:30:14.906024" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:30:13.905669" elapsed="1.000355"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:30:14.912075" level="INFO">${actual_value} = 1</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:14.906024" elapsed="0.006051"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:14.912075" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:14.913076" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:30:14.913076" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:30:14.913076" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:30:14.913076" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:30:14.912075" elapsed="0.001001"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:14.913076" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:14.913076" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="PASS" start="2025-02-22T07:30:14.913076" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2025-02-22T07:30:14.913076" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:14.913076" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:30:14.913076" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:14.912075" elapsed="0.001001"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-22T07:30:13.905669" elapsed="1.007407"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${TIMEOUT_For_Compare}</value>
+<status status="PASS" start="2025-02-22T07:30:13.905669" elapsed="1.007407"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:14.914077" level="INFO">Value of found: True this is after Breaking the Loop.</msg>
+<arg>Value of found: ${found} this is after Breaking the Loop.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:14.913076" elapsed="0.001001"/>
+</kw>
+<if>
+<branch type="IF" condition="'${found}'== 'True'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:14.914077" level="INFO">PASS: hil_ctrl::radar_fl_loc_sim reached expected value 1 within timeout, found Actual value 1</msg>
+<arg>PASS: ${var_name} reached expected value ${expected_value} within timeout, found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:14.914077" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:30:14.914077" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:14.914077" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:30:14.914077" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:14.914077" elapsed="0.000000"/>
+</if>
+<arg>${Radar_Fl_loc_Sim}</arg>
+<arg>1</arg>
+<arg>${None}</arg>
+<arg>${TIMEOUT}</arg>
+<status status="PASS" start="2025-02-22T07:30:13.905133" elapsed="1.008944"/>
+</kw>
+<kw name="Compare System Variable Value">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:14.915075" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:14.915075" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:30:15.915660" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:30:14.915075" elapsed="1.000585"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:30:15.922974" level="INFO">${actual_value} = 1</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:15.915660" elapsed="0.007314"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:15.922974" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:15.922974" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:30:15.922974" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:30:15.922974" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:30:15.922974" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:30:15.922974" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:15.922974" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:15.922974" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="PASS" start="2025-02-22T07:30:15.922974" elapsed="0.001003"/>
+</break>
+<status status="PASS" start="2025-02-22T07:30:15.922974" elapsed="0.001003"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:15.922974" elapsed="0.001003"/>
+</if>
+<status status="PASS" start="2025-02-22T07:30:15.922974" elapsed="0.001003"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:15.922974" elapsed="0.001003"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-22T07:30:14.915075" elapsed="1.008902"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${TIMEOUT_For_Compare}</value>
+<status status="PASS" start="2025-02-22T07:30:14.915075" elapsed="1.008902"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:15.923977" level="INFO">Value of found: True this is after Breaking the Loop.</msg>
+<arg>Value of found: ${found} this is after Breaking the Loop.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:15.923977" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${found}'== 'True'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:15.923977" level="INFO">PASS: hil_ctrl::radar_fr_loc_sim reached expected value 1 within timeout, found Actual value 1</msg>
+<arg>PASS: ${var_name} reached expected value ${expected_value} within timeout, found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:15.923977" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:30:15.923977" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:15.923977" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:30:15.923977" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:15.923977" elapsed="0.001000"/>
+</if>
+<arg>${Radar_Fr_loc_Sim}</arg>
+<arg>1</arg>
+<arg>${None}</arg>
+<arg>${TIMEOUT}</arg>
+<status status="PASS" start="2025-02-22T07:30:14.915075" elapsed="1.009902"/>
+</kw>
+<kw name="Compare System Variable Value">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:15.924977" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:15.924977" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:30:16.926056" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:30:15.925979" elapsed="1.000077"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:30:16.932093" level="INFO">${actual_value} = 1</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:16.926056" elapsed="0.006037"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:16.932093" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:16.932093" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:30:16.932093" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:30:16.932093" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:30:16.932093" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:30:16.932093" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:16.933093" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:16.933093" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="PASS" start="2025-02-22T07:30:16.933093" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2025-02-22T07:30:16.933093" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:16.933093" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:30:16.932093" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:16.932093" elapsed="0.001000"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-22T07:30:15.925979" elapsed="1.007114"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${TIMEOUT_For_Compare}</value>
+<status status="PASS" start="2025-02-22T07:30:15.924977" elapsed="1.008116"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:16.933093" level="INFO">Value of found: True this is after Breaking the Loop.</msg>
+<arg>Value of found: ${found} this is after Breaking the Loop.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:16.933093" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${found}'== 'True'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:16.934093" level="INFO">PASS: hil_ctrl::radar_rl_loc_sim reached expected value 1 within timeout, found Actual value 1</msg>
+<arg>PASS: ${var_name} reached expected value ${expected_value} within timeout, found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:16.933093" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:30:16.933093" elapsed="0.001000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:16.934093" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:30:16.934093" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:16.933093" elapsed="0.001000"/>
+</if>
+<arg>${Radar_rl_loc_Sim}</arg>
+<arg>1</arg>
+<arg>${None}</arg>
+<arg>${TIMEOUT}</arg>
+<status status="PASS" start="2025-02-22T07:30:15.924977" elapsed="1.009116"/>
+</kw>
+<kw name="Compare System Variable Value">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:16.935093" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:16.934093" elapsed="0.001000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:30:17.935498" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:30:16.935093" elapsed="1.000405"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:30:17.939283" level="INFO">${actual_value} = 1</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:17.935498" elapsed="0.003785"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:17.939283" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:17.939283" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:30:17.939283" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:30:17.939283" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:30:17.939283" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:30:17.939283" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:17.939283" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:17.939283" elapsed="0.001000"/>
+</kw>
+<break>
+<status status="PASS" start="2025-02-22T07:30:17.940283" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2025-02-22T07:30:17.939283" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:17.939283" elapsed="0.001000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:30:17.939283" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:17.939283" elapsed="0.001000"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-22T07:30:16.935093" elapsed="1.005190"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${TIMEOUT_For_Compare}</value>
+<status status="PASS" start="2025-02-22T07:30:16.935093" elapsed="1.005190"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:17.940283" level="INFO">Value of found: True this is after Breaking the Loop.</msg>
+<arg>Value of found: ${found} this is after Breaking the Loop.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:17.940283" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${found}'== 'True'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:17.940283" level="INFO">PASS: hil_ctrl::radar_rr_loc_sim reached expected value 1 within timeout, found Actual value 1</msg>
+<arg>PASS: ${var_name} reached expected value ${expected_value} within timeout, found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:17.940283" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:30:17.940283" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:17.940283" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:30:17.940283" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:17.940283" elapsed="0.001000"/>
+</if>
+<arg>${Radar_rr_loc_Sim}</arg>
+<arg>1</arg>
+<arg>${None}</arg>
+<arg>${TIMEOUT}</arg>
+<status status="PASS" start="2025-02-22T07:30:16.934093" elapsed="1.007190"/>
+</kw>
+<doc>Verifies setting of Hil_Config to DRV_STD And Radar to Simulated state.</doc>
+<status status="PASS" start="2025-02-22T07:30:05.849419" elapsed="12.091864"/>
+</test>
+<test id="s1-t4" name="Test Set And Get System Variables For HIL Mode" line="101">
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:17.942283" elapsed="1.005081"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:18.947364" level="INFO">Set system variable hil_ctrl::hil_mode to 4</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:18.947364" elapsed="0.000000"/>
+</kw>
+<arg>${HIL_MODE_VAR}</arg>
+<arg>${HIL_MODE}</arg>
+<status status="PASS" start="2025-02-22T07:30:17.941283" elapsed="1.006081"/>
+</kw>
+<kw name="Compare System Variable Value">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:18.948369" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:18.948369" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:30:19.949859" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:30:18.948369" elapsed="1.001490"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:30:19.965874" level="INFO">${actual_value} = 4</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:19.949859" elapsed="0.016015"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T07:30:19.965874" level="INFO">${diff} = 0</msg>
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T07:30:19.965874" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:19.966872" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:19.966872" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="PASS" start="2025-02-22T07:30:19.966872" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2025-02-22T07:30:19.965874" elapsed="0.000998"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:19.965874" elapsed="0.000998"/>
+</if>
+<status status="PASS" start="2025-02-22T07:30:19.965874" elapsed="0.000998"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:19.966872" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:30:19.966872" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:30:19.966872" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:30:19.966872" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:30:19.966872" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:19.965874" elapsed="0.000998"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-22T07:30:18.948369" elapsed="1.018503"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${TIMEOUT_For_Compare}</value>
+<status status="PASS" start="2025-02-22T07:30:18.948369" elapsed="1.018503"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:19.966872" level="INFO">Value of found: True this is after Breaking the Loop.</msg>
+<arg>Value of found: ${found} this is after Breaking the Loop.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:19.966872" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${found}'== 'True'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:19.967872" level="INFO">PASS: hil_ctrl::hil_mode reached expected value 4 within timeout, found Actual value 4</msg>
+<arg>PASS: ${var_name} reached expected value ${expected_value} within timeout, found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:19.966872" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:30:19.966872" elapsed="0.001000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:19.967872" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:30:19.967872" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:19.966872" elapsed="0.001000"/>
+</if>
+<arg>${HIL_MODE_VAR}</arg>
+<arg>${HIL_MODE}</arg>
+<arg>${TOLERANCE}</arg>
+<arg>${TIMEOUT}</arg>
+<status status="PASS" start="2025-02-22T07:30:18.948369" elapsed="1.019503"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:30:39.968289" level="INFO">Slept 20 seconds.</msg>
+<arg>20</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:30:19.967872" elapsed="20.000417"/>
+</kw>
+<doc>Verifies setting and comparing HIL Mode system variable.</doc>
+<status status="PASS" start="2025-02-22T07:30:17.941283" elapsed="22.027006"/>
+</test>
+<test id="s1-t5" name="Test XCP Connect And Loading Carmaker Test Scenario" line="107">
+<kw name="XCP Connect">
+<kw name="Call Xcp Connection" owner="Py_RobotFramwork_Input_File">
+<arg>${capl_test_module}</arg>
+<doc>This Function is for Calling CAPL Test Module and Execute them</doc>
+<status status="PASS" start="2025-02-22T07:30:39.969363" elapsed="11.920242"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:51.889605" level="INFO">XCP Connection Called Sucessfully</msg>
+<arg>XCP Connection Called Sucessfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:51.889605" elapsed="0.000000"/>
+</kw>
+<arg>${Test_Connect_Xcp}</arg>
+<status status="PASS" start="2025-02-22T07:30:39.969363" elapsed="11.920242"/>
+</kw>
+<kw name="Compare System Variable Value">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:51.890610" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:51.890610" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:30:52.890937" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:30:51.890610" elapsed="1.000327"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:30:52.897067" level="INFO">${actual_value} = 1</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:52.890937" elapsed="0.006130"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:52.897067" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:52.897067" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:30:52.897067" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:30:52.897067" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:30:52.897067" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:30:52.897067" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:30:52.898067" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:30:52.897067" elapsed="0.001000"/>
+</kw>
+<break>
+<status status="PASS" start="2025-02-22T07:30:52.898067" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2025-02-22T07:30:52.897067" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:52.897067" elapsed="0.001000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:30:52.897067" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:52.897067" elapsed="0.001000"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-22T07:30:51.890610" elapsed="1.007457"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${TIMEOUT_For_Compare}</value>
+<status status="PASS" start="2025-02-22T07:30:51.890610" elapsed="1.007457"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:52.898067" level="INFO">Value of found: True this is after Breaking the Loop.</msg>
+<arg>Value of found: ${found} this is after Breaking the Loop.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:52.898067" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${found}'== 'True'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:52.898067" level="INFO">PASS: Obejct_Vehicle_Speed::XCP_Connection_Success reached expected value 1 within timeout, found Actual value 1</msg>
+<arg>PASS: ${var_name} reached expected value ${expected_value} within timeout, found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:52.898067" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:30:52.898067" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:30:52.898067" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:30:52.898067" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:30:52.898067" elapsed="0.000000"/>
+</if>
+<arg>${Test_Connect_Xcp_Sts}</arg>
+<arg>1</arg>
+<arg>${None}</arg>
+<arg>2</arg>
+<status status="PASS" start="2025-02-22T07:30:51.889605" elapsed="1.009461"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:52.899066" elapsed="1.007387"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:53.906453" level="INFO">Set system variable Customer_specific::cm_scenario to drv/SOD/CTX/CTA_90_Deg_Road_Side_Parking_Staright_Road.trn</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:53.906453" elapsed="0.000510"/>
+</kw>
+<arg>${Load_CM_Scenario}</arg>
+<arg>${TEST_RUN}</arg>
+<status status="PASS" start="2025-02-22T07:30:52.899066" elapsed="1.007897"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:30:58.907131" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:30:53.906963" elapsed="5.000168"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:58.907131" elapsed="1.008174"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:30:59.915305" level="INFO">Set system variable Customer_specific::load_scenario to 1</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:30:59.915305" elapsed="0.000000"/>
+</kw>
+<arg>${Load_CM_Scenario_Done}</arg>
+<arg>1</arg>
+<status status="PASS" start="2025-02-22T07:30:58.907131" elapsed="1.008174"/>
+</kw>
+<doc>Verifies setting the test scenario and running the measurement.</doc>
+<status status="PASS" start="2025-02-22T07:30:39.968289" elapsed="19.947016"/>
+</test>
+<test id="s1-t6" name="Test To Set EGO and Target Vehicle Speed" line="119">
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:30:59.916309" elapsed="1.009551"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:00.925860" level="INFO">Set system variable hil_drv::target_velocity to 0.0</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:00.925860" elapsed="0.000000"/>
+</kw>
+<arg>${EGO_VEHICLE_SPEED_VAR}</arg>
+<arg>0.0</arg>
+<status status="PASS" start="2025-02-22T07:30:59.916309" elapsed="1.009551"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:00.925860" elapsed="1.010680"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:01.936540" level="INFO">Set system variable hil_drv::target_velocity_status to 1</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:01.936540" elapsed="0.000000"/>
+</kw>
+<arg>${EGO_VEHICLE_STATUS_VAR}</arg>
+<arg>1</arg>
+<status status="PASS" start="2025-02-22T07:31:00.925860" elapsed="1.010680"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:01.936540" elapsed="1.022741"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:02.959281" level="INFO">Set system variable Obejct_Vehicle_Speed::Target_Veh_0 to 36.0</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:02.959281" elapsed="0.000000"/>
+</kw>
+<arg>${TARGET_VEHICLE_OBJ_0}</arg>
+<arg>36.0</arg>
+<status status="PASS" start="2025-02-22T07:31:01.936540" elapsed="1.022741"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:02.960289" elapsed="1.017655"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:03.977944" level="INFO">Set system variable Obejct_Vehicle_Speed::Target_Veh_1 to 36.0</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:03.977944" elapsed="0.000000"/>
+</kw>
+<arg>${TARGET_VEHICLE_OBJ_1}</arg>
+<arg>36.0</arg>
+<status status="PASS" start="2025-02-22T07:31:02.960289" elapsed="1.017655"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:03.977944" elapsed="1.008281"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:04.986225" level="INFO">Set system variable Obejct_Vehicle_Speed::Target_Veh_Status_0 to 1</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:04.986225" elapsed="0.000000"/>
+</kw>
+<arg>${TARGET_VEHICLE_OBJ_0_STS}</arg>
+<arg>1</arg>
+<status status="PASS" start="2025-02-22T07:31:03.977944" elapsed="1.008281"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:04.987231" elapsed="1.007258"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:05.994489" level="INFO">Set system variable Obejct_Vehicle_Speed::Target_Veh_Status_1 to 1</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:05.994489" elapsed="0.000000"/>
+</kw>
+<arg>${TARGET_VEHICLE_OBJ_1_STS}</arg>
+<arg>1</arg>
+<status status="PASS" start="2025-02-22T07:31:04.986225" elapsed="1.008264"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:05.994992" elapsed="1.004487"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:06.999479" level="INFO">Set system variable hil_adas::gear_req to 1</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:06.999479" elapsed="0.000000"/>
+</kw>
+<arg>${Ego_Gear_Req}</arg>
+<arg>1</arg>
+<status status="PASS" start="2025-02-22T07:31:05.994992" elapsed="1.004487"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:07.999806" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:06.999479" elapsed="1.000327"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:07.999806" elapsed="1.007419"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:09.007225" level="INFO">Set system variable hil_ctrl::scenario_start to 1</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:09.007225" elapsed="0.000000"/>
+</kw>
+<arg>${Carmake_Scenario_Start}</arg>
+<arg>1</arg>
+<status status="PASS" start="2025-02-22T07:31:07.999806" elapsed="1.007419"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:12.008599" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:09.008229" elapsed="3.000370"/>
+</kw>
+<doc>Verifies the Speed of EGO Vehicle and Target Vehicle.</doc>
+<status status="PASS" start="2025-02-22T07:30:59.916309" elapsed="12.092290"/>
+</test>
+<test id="s1-t7" name="Test CTA Feature Activation From Right Hand Side" line="133">
+<kw name="Compare System Variable Value">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:12.011603" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:12.011603" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:13.012033" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:12.011603" elapsed="1.000430"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:13.015112" level="INFO">${actual_value} = 0.0</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:13.012033" elapsed="0.003079"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T07:31:13.016113" level="INFO">${diff} = 0.0</msg>
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T07:31:13.015112" elapsed="0.001001"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:13.016113" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:13.016113" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="PASS" start="2025-02-22T07:31:13.016113" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2025-02-22T07:31:13.016113" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:13.016113" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:13.015112" elapsed="0.001001"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:13.016113" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:13.016113" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:13.016113" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:13.016113" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:13.016113" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:13.015112" elapsed="0.001001"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-22T07:31:12.011603" elapsed="1.004510"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${TIMEOUT_For_Compare}</value>
+<status status="PASS" start="2025-02-22T07:31:12.011603" elapsed="1.004510"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:13.016113" level="INFO">Value of found: True this is after Breaking the Loop.</msg>
+<arg>Value of found: ${found} this is after Breaking the Loop.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:13.016113" elapsed="0.001000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${found}'== 'True'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:13.017113" level="INFO">PASS: hil_hvm::velocity_x reached expected value 0.0 within timeout, found Actual value 0.0</msg>
+<arg>PASS: ${var_name} reached expected value ${expected_value} within timeout, found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:13.017113" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:31:13.017113" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:13.017113" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:31:13.017113" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:13.017113" elapsed="0.000000"/>
+</if>
+<arg>${READ_EGO_VEHICLE_SPEED}</arg>
+<arg>0.0</arg>
+<arg>0.2</arg>
+<arg>${TIMEOUT}</arg>
+<status status="PASS" start="2025-02-22T07:31:12.010605" elapsed="1.006508"/>
+</kw>
+<kw name="Compare System Variable Value">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:13.017737" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:13.017737" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:14.019213" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:13.017737" elapsed="1.001476"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:14.038198" level="INFO">${actual_value} = 33.592729244634</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:14.019213" elapsed="0.018985"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T07:31:14.039199" level="INFO">${diff} = 2.2072707553659967</msg>
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T07:31:14.038198" elapsed="0.001001"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:14.039199" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:14.039199" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:14.039199" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:14.039199" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:14.038198" elapsed="0.001001"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:14.039199" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:14.039199" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:14.039199" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:14.039199" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:14.039199" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:14.038198" elapsed="0.001001"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-22T07:31:13.017737" elapsed="1.021462"/>
+</iter>
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:15.040566" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:14.040199" elapsed="1.000367"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:15.089238" level="INFO">${actual_value} = 35.51780067481245</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:15.040566" elapsed="0.048672"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T07:31:15.090237" level="INFO">${diff} = 0.2821993251875483</msg>
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T07:31:15.089238" elapsed="0.000999"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:15.090237" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:15.090237" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="PASS" start="2025-02-22T07:31:15.090237" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2025-02-22T07:31:15.090237" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:15.090237" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:15.089238" elapsed="0.000999"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:15.090237" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:15.090237" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:15.090237" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:15.090237" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:15.090237" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:15.089238" elapsed="0.000999"/>
+</if>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-02-22T07:31:14.039199" elapsed="1.051038"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${TIMEOUT_For_Compare}</value>
+<status status="PASS" start="2025-02-22T07:31:13.017737" elapsed="2.072500"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:15.091236" level="INFO">Value of found: True this is after Breaking the Loop.</msg>
+<arg>Value of found: ${found} this is after Breaking the Loop.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:15.090237" elapsed="0.000999"/>
+</kw>
+<if>
+<branch type="IF" condition="'${found}'== 'True'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:15.091236" level="INFO">PASS: Obejct_Vehicle_Speed::Target_Veh_Speed_Read_0 reached expected value 35.80 within timeout, found Actual value 35.51780067481245</msg>
+<arg>PASS: ${var_name} reached expected value ${expected_value} within timeout, found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:15.091236" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:31:15.091236" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:15.091236" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:31:15.091236" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:15.091236" elapsed="0.000000"/>
+</if>
+<arg>${READ_TARGET_VEHICLE_OBJ_0}</arg>
+<arg>35.80</arg>
+<arg>0.30</arg>
+<arg>12</arg>
+<status status="PASS" start="2025-02-22T07:31:13.017737" elapsed="2.073499"/>
+</kw>
+<kw name="Compare System Variable Two Values in AND Condition">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:15.092238" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:15.092238" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:16.092326" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:15.092238" elapsed="1.000088"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:16.106706" level="INFO">${actual_value_1} = 2.1390764713287354</msg>
+<var>${actual_value_1}</var>
+<arg>${var_name_1}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:16.092326" elapsed="0.014380"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:16.125710" level="INFO">${actual_value_2} = 2.1390764713287354</msg>
+<var>${actual_value_2}</var>
+<arg>${Var_Name_2}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:16.106706" elapsed="0.019004"/>
+</kw>
+<if>
+<branch type="IF" condition="'${actual_value_1}' &gt;= '${expected_value_1}'">
+<if>
+<branch type="IF" condition="'${actual_value_2}' &lt;= '${expected_value_2}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:16.125710" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:16.125710" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="PASS" start="2025-02-22T07:31:16.125710" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2025-02-22T07:31:16.125710" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:16.125710" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:16.125710" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:16.125710" elapsed="0.000000"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-22T07:31:15.092238" elapsed="1.034542"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${TIMEOUT_For_Compare}</value>
+<status status="PASS" start="2025-02-22T07:31:15.092238" elapsed="1.034542"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:16.126780" level="INFO">Value of found: True this is after Breaking the Loop.</msg>
+<arg>Value of found: ${found} this is after Breaking the Loop.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:16.126780" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${found}' == 'True'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:16.126780" level="INFO">PASS: XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_TTX_Right_ve reached expected value 0.10 within timeout,found Actual Value 2.1390764713287354</msg>
+<arg>PASS: ${var_name_1} reached expected value ${expected_value_1} within timeout,found Actual Value ${actual_value_1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:16.126780" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:16.126780" level="INFO">PASS: XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_TTX_Right_ve reached expected value 0.10 within timeout,found Actual Value 2.1390764713287354</msg>
+<arg>PASS: ${Var_Name_2} reached expected value ${expected_value_1} within timeout,found Actual Value ${actual_value_2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:16.126780" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:31:16.126780" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>FAIL: Timeout reached for ${var_name_1} and ${var_name_2} Expected ${expected_value_1} and ${expected_value_2}but found Actual Values ${actual_value_1} and ${actual_value_2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:16.126780" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:31:16.126780" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:16.126780" elapsed="0.000999"/>
+</if>
+<arg>${TA_CTA_TTX_Right_ve}</arg>
+<arg>0.10</arg>
+<arg>${TA_CTA_TTX_Right_ve}</arg>
+<arg>3.00</arg>
+<arg>20</arg>
+<status status="PASS" start="2025-02-22T07:31:15.091236" elapsed="1.036543"/>
+</kw>
+<kw name="Check Value Valid">
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:16.138776" level="INFO">${actual_value_background_check} = 1</msg>
+<var>${actual_value_background_check}</var>
+<arg>${sys_var_Background_Check}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:16.127779" elapsed="0.010997"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:16.149780" level="INFO">${actual_value_Determined_Var} = 2.1390764713287354</msg>
+<var>${actual_value_Determined_Var}</var>
+<arg>${Determined_sys_var_val}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:16.138776" elapsed="0.011004"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:16.150780" level="INFO">${actual_value_background_check_Prinatable} = 1</msg>
+<var>${actual_value_background_check_Prinatable}</var>
+<arg>${actual_value_background_check}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:16.149780" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:16.150780" level="INFO">${actual_value_Determined_Var_Printable} = 2.1390764713287354</msg>
+<var>${actual_value_Determined_Var_Printable}</var>
+<arg>${actual_value_Determined_Var}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:16.150780" elapsed="0.000000"/>
+</kw>
+<while condition="${actual_value_background_check} == ${backgound_check_value}">
+<iter>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:16.161363" level="INFO">${actual_value_background_check} = 1</msg>
+<var>${actual_value_background_check}</var>
+<arg>${sys_var_Background_Check}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:16.150780" elapsed="0.010583"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:16.172362" level="INFO">${actual_value_Determined_Var} = 2.0906379222869873</msg>
+<var>${actual_value_Determined_Var}</var>
+<arg>${Determined_sys_var_val}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:16.161363" elapsed="0.010999"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:17.172556" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:16.172362" elapsed="1.000194"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:17.172556" level="INFO">Value of Value Valid Variable XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_ThreatConfRight_ve is : 1</msg>
+<arg>Value of Value Valid Variable ${sys_var_Background_Check} is : ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:17.172556" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${actual_value_Determined_Var}' &gt; '${expected_value}'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:17.172556" level="INFO">Found the value!. XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_TTX_Right_ve Result: 2.0906379222869873</msg>
+<arg>Found the value!. ${Determined_sys_var_val} Result: ${actual_value_Determined_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:17.172556" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:31:17.172556" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Found the value!. ${Determined_sys_var_val} Result: ${actual_value_Determined_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:17.173560" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:17.173560" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:17.172556" elapsed="0.001004"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:17.172556" elapsed="0.001004"/>
+</if>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T07:31:17.173560" level="INFO">${Counter} = 1</msg>
+<var>${Counter}</var>
+<arg>${Counter} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T07:31:17.173560" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${Break_Time}' == '${Counter}'">
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:17.173560" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:17.173560" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:17.173560" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:16.150780" elapsed="1.022780"/>
+</iter>
+<iter>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:17.188206" level="INFO">${actual_value_background_check} = 1</msg>
+<var>${actual_value_background_check}</var>
+<arg>${sys_var_Background_Check}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:17.173560" elapsed="0.014646"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:17.196211" level="INFO">${actual_value_Determined_Var} = 1.035943865776062</msg>
+<var>${actual_value_Determined_Var}</var>
+<arg>${Determined_sys_var_val}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:17.188206" elapsed="0.008005"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:18.196380" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:17.196211" elapsed="1.000169"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:18.196380" level="INFO">Value of Value Valid Variable XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_ThreatConfRight_ve is : 1</msg>
+<arg>Value of Value Valid Variable ${sys_var_Background_Check} is : ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:18.196380" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${actual_value_Determined_Var}' &gt; '${expected_value}'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:18.196380" level="INFO">Found the value!. XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_TTX_Right_ve Result: 1.035943865776062</msg>
+<arg>Found the value!. ${Determined_sys_var_val} Result: ${actual_value_Determined_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:18.196380" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:31:18.196380" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Found the value!. ${Determined_sys_var_val} Result: ${actual_value_Determined_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:18.196380" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:18.197523" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:18.196380" elapsed="0.001143"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:18.196380" elapsed="0.001143"/>
+</if>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T07:31:18.197523" level="INFO">${Counter} = 2</msg>
+<var>${Counter}</var>
+<arg>${Counter} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T07:31:18.197523" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${Break_Time}' == '${Counter}'">
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:18.197523" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:18.197523" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:18.197523" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:17.173560" elapsed="1.023963"/>
+</iter>
+<iter>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:18.208332" level="INFO">${actual_value_background_check} = 1</msg>
+<var>${actual_value_background_check}</var>
+<arg>${sys_var_Background_Check}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:18.197523" elapsed="0.010809"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:18.217174" level="INFO">${actual_value_Determined_Var} = 0.05002203211188316</msg>
+<var>${actual_value_Determined_Var}</var>
+<arg>${Determined_sys_var_val}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:18.208332" elapsed="0.008842"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.218244" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:18.217174" elapsed="1.001070"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.218244" level="INFO">Value of Value Valid Variable XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_ThreatConfRight_ve is : 1</msg>
+<arg>Value of Value Valid Variable ${sys_var_Background_Check} is : ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.218244" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${actual_value_Determined_Var}' &gt; '${expected_value}'">
+<kw name="Log" owner="BuiltIn">
+<arg>Found the value!. ${Determined_sys_var_val} Result: ${actual_value_Determined_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.218244" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:31:19.218244" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.219327" level="INFO">Found the value!. XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_TTX_Right_ve Result: 0.05002203211188316</msg>
+<arg>Found the value!. ${Determined_sys_var_val} Result: ${actual_value_Determined_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.218244" elapsed="0.001083"/>
+</kw>
+<break>
+<status status="PASS" start="2025-02-22T07:31:19.219327" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2025-02-22T07:31:19.218244" elapsed="0.001083"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:19.218244" elapsed="0.001083"/>
+</if>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${Counter}</var>
+<arg>${Counter} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.219327" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${Break_Time}' == '${Counter}'">
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:19.219327" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:19.219327" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:19.219327" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:18.197523" elapsed="1.021804"/>
+</iter>
+<status status="PASS" start="2025-02-22T07:31:16.150780" elapsed="3.068547"/>
+</while>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.219327" level="INFO">${Var_iter} = 0</msg>
+<var>${Var_iter}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.219327" elapsed="0.000000"/>
+</kw>
+<while condition="${Var_iter} &lt;= ${Wait_Time_Expected}">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.419573" level="INFO">Slept 200 milliseconds.</msg>
+<arg>0.20</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.219327" elapsed="0.200246"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.419573" level="INFO">${Var_iter} = 1</msg>
+<var>${Var_iter}</var>
+<arg>${Var_iter} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.419573" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${actual_value_background_check}' != '${backgound_check_value}'">
+<if>
+<branch type="IF" condition="'${actual_value_Determined_Var}' &lt; '${expected_value}'">
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: Achieved ${sys_var_Background_Check} Expectd Value ${backgound_check_value} Against Actual Value ${actual_value_background_check_Prinatable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.419573" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: When ${Determined_sys_var_val} Value is Greater than ${actual_value_Determined_Var_Printable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.419573" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: ${Determined_sys_var_val} reached less than expected ${expected_value} when ${sys_var_Background_Check} value is Not ${backgound_check_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.419573" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: And Found Value is ${actual_value_Determined_Var} for ${Determined_sys_var_val} When coming out of Loop</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.420714" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: And Found Value for ${sys_var_Background_Check} is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.420714" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.420714" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:19.420714" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:19.419573" elapsed="0.001141"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:19.419573" elapsed="0.001141"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:19.419573" elapsed="0.001141"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.420714" level="INFO">FAIL: Timeout reached for XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_TTX_Right_ve Expected 0.8 but found 0.05002203211188316</msg>
+<arg>FAIL: Timeout reached for ${Determined_sys_var_val} Expected ${expected_value} but found ${actual_value_Determined_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.420714" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.420714" level="INFO">FAIL: Where XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_ThreatConfRight_ve Expected Value is 1 but Found Value is 1</msg>
+<arg>FAIL: Where ${sys_var_Background_Check} Expected Value is ${backgound_check_value} but Found Value is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.420714" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.421714" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.420714" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:31:19.420714" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:19.419573" elapsed="0.002141"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:19.219327" elapsed="0.202387"/>
+</iter>
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.621968" level="INFO">Slept 200 milliseconds.</msg>
+<arg>0.20</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.421714" elapsed="0.200254"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.621968" level="INFO">${Var_iter} = 2</msg>
+<var>${Var_iter}</var>
+<arg>${Var_iter} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.621968" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${actual_value_background_check}' != '${backgound_check_value}'">
+<if>
+<branch type="IF" condition="'${actual_value_Determined_Var}' &lt; '${expected_value}'">
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: Achieved ${sys_var_Background_Check} Expectd Value ${backgound_check_value} Against Actual Value ${actual_value_background_check_Prinatable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.622475" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: When ${Determined_sys_var_val} Value is Greater than ${actual_value_Determined_Var_Printable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.622475" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: ${Determined_sys_var_val} reached less than expected ${expected_value} when ${sys_var_Background_Check} value is Not ${backgound_check_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.622475" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: And Found Value is ${actual_value_Determined_Var} for ${Determined_sys_var_val} When coming out of Loop</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.622475" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: And Found Value for ${sys_var_Background_Check} is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.622475" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.622475" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:19.622475" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:19.622475" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:19.622475" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:19.622475" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.622475" level="INFO">FAIL: Timeout reached for XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_TTX_Right_ve Expected 0.8 but found 0.05002203211188316</msg>
+<arg>FAIL: Timeout reached for ${Determined_sys_var_val} Expected ${expected_value} but found ${actual_value_Determined_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.622475" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.623479" level="INFO">FAIL: Where XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_ThreatConfRight_ve Expected Value is 1 but Found Value is 1</msg>
+<arg>FAIL: Where ${sys_var_Background_Check} Expected Value is ${backgound_check_value} but Found Value is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.623479" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.623479" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.623479" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:31:19.622475" elapsed="0.001004"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:19.622475" elapsed="0.001004"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:19.421714" elapsed="0.201765"/>
+</iter>
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.823593" level="INFO">Slept 200 milliseconds.</msg>
+<arg>0.20</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.623479" elapsed="0.200114"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.823593" level="INFO">${Var_iter} = 3</msg>
+<var>${Var_iter}</var>
+<arg>${Var_iter} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.823593" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${actual_value_background_check}' != '${backgound_check_value}'">
+<if>
+<branch type="IF" condition="'${actual_value_Determined_Var}' &lt; '${expected_value}'">
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: Achieved ${sys_var_Background_Check} Expectd Value ${backgound_check_value} Against Actual Value ${actual_value_background_check_Prinatable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.823593" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: When ${Determined_sys_var_val} Value is Greater than ${actual_value_Determined_Var_Printable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.823593" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: ${Determined_sys_var_val} reached less than expected ${expected_value} when ${sys_var_Background_Check} value is Not ${backgound_check_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.824693" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: And Found Value is ${actual_value_Determined_Var} for ${Determined_sys_var_val} When coming out of Loop</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.824693" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: And Found Value for ${sys_var_Background_Check} is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.824693" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:19.824693" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:19.824693" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:19.823593" elapsed="0.001100"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:19.823593" elapsed="0.001100"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:19.823593" elapsed="0.001100"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.824693" level="INFO">FAIL: Timeout reached for XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_TTX_Right_ve Expected 0.8 but found 0.05002203211188316</msg>
+<arg>FAIL: Timeout reached for ${Determined_sys_var_val} Expected ${expected_value} but found ${actual_value_Determined_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.824693" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.824693" level="INFO">FAIL: Where XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_ThreatConfRight_ve Expected Value is 1 but Found Value is 1</msg>
+<arg>FAIL: Where ${sys_var_Background_Check} Expected Value is ${backgound_check_value} but Found Value is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.824693" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:19.825693" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.825693" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:31:19.824693" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:19.823593" elapsed="0.002100"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:19.623479" elapsed="0.202214"/>
+</iter>
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.025971" level="INFO">Slept 200 milliseconds.</msg>
+<arg>0.20</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:19.825693" elapsed="0.200278"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.025971" level="INFO">${Var_iter} = 4</msg>
+<var>${Var_iter}</var>
+<arg>${Var_iter} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.025971" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${actual_value_background_check}' != '${backgound_check_value}'">
+<if>
+<branch type="IF" condition="'${actual_value_Determined_Var}' &lt; '${expected_value}'">
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: Achieved ${sys_var_Background_Check} Expectd Value ${backgound_check_value} Against Actual Value ${actual_value_background_check_Prinatable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.025971" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: When ${Determined_sys_var_val} Value is Greater than ${actual_value_Determined_Var_Printable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.025971" elapsed="0.001007"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: ${Determined_sys_var_val} reached less than expected ${expected_value} when ${sys_var_Background_Check} value is Not ${backgound_check_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.026978" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: And Found Value is ${actual_value_Determined_Var} for ${Determined_sys_var_val} When coming out of Loop</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.026978" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: And Found Value for ${sys_var_Background_Check} is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.026978" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.026978" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:20.026978" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:20.025971" elapsed="0.001007"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:20.025971" elapsed="0.001007"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:20.025971" elapsed="0.001007"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.026978" level="INFO">FAIL: Timeout reached for XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_TTX_Right_ve Expected 0.8 but found 0.05002203211188316</msg>
+<arg>FAIL: Timeout reached for ${Determined_sys_var_val} Expected ${expected_value} but found ${actual_value_Determined_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.026978" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.026978" level="INFO">FAIL: Where XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_ThreatConfRight_ve Expected Value is 1 but Found Value is 1</msg>
+<arg>FAIL: Where ${sys_var_Background_Check} Expected Value is ${backgound_check_value} but Found Value is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.026978" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.027975" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.026978" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:31:20.026978" elapsed="0.000997"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:20.025971" elapsed="0.002004"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:19.825693" elapsed="0.202282"/>
+</iter>
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.228313" level="INFO">Slept 200 milliseconds.</msg>
+<arg>0.20</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.027975" elapsed="0.200338"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.228313" level="INFO">${Var_iter} = 5</msg>
+<var>${Var_iter}</var>
+<arg>${Var_iter} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.228313" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${actual_value_background_check}' != '${backgound_check_value}'">
+<if>
+<branch type="IF" condition="'${actual_value_Determined_Var}' &lt; '${expected_value}'">
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: Achieved ${sys_var_Background_Check} Expectd Value ${backgound_check_value} Against Actual Value ${actual_value_background_check_Prinatable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.228313" elapsed="0.001005"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: When ${Determined_sys_var_val} Value is Greater than ${actual_value_Determined_Var_Printable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.229318" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: ${Determined_sys_var_val} reached less than expected ${expected_value} when ${sys_var_Background_Check} value is Not ${backgound_check_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.229318" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: And Found Value is ${actual_value_Determined_Var} for ${Determined_sys_var_val} When coming out of Loop</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.229318" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: And Found Value for ${sys_var_Background_Check} is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.229318" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.229318" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:20.229318" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:20.228313" elapsed="0.001005"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:20.228313" elapsed="0.001005"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:20.228313" elapsed="0.001005"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.229318" level="INFO">FAIL: Timeout reached for XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_TTX_Right_ve Expected 0.8 but found 0.05002203211188316</msg>
+<arg>FAIL: Timeout reached for ${Determined_sys_var_val} Expected ${expected_value} but found ${actual_value_Determined_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.229318" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.229318" level="INFO">FAIL: Where XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_ThreatConfRight_ve Expected Value is 1 but Found Value is 1</msg>
+<arg>FAIL: Where ${sys_var_Background_Check} Expected Value is ${backgound_check_value} but Found Value is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.229318" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.230318" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.230318" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:31:20.229318" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:20.228313" elapsed="0.002005"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:20.027975" elapsed="0.202343"/>
+</iter>
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.430611" level="INFO">Slept 200 milliseconds.</msg>
+<arg>0.20</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.230318" elapsed="0.200293"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.430611" level="INFO">${Var_iter} = 6</msg>
+<var>${Var_iter}</var>
+<arg>${Var_iter} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.430611" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${actual_value_background_check}' != '${backgound_check_value}'">
+<if>
+<branch type="IF" condition="'${actual_value_Determined_Var}' &lt; '${expected_value}'">
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: Achieved ${sys_var_Background_Check} Expectd Value ${backgound_check_value} Against Actual Value ${actual_value_background_check_Prinatable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.431615" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: When ${Determined_sys_var_val} Value is Greater than ${actual_value_Determined_Var_Printable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.431615" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: ${Determined_sys_var_val} reached less than expected ${expected_value} when ${sys_var_Background_Check} value is Not ${backgound_check_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.431615" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: And Found Value is ${actual_value_Determined_Var} for ${Determined_sys_var_val} When coming out of Loop</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.431615" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: And Found Value for ${sys_var_Background_Check} is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.431615" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.431615" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:20.432618" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:20.431615" elapsed="0.001003"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:20.431615" elapsed="0.001003"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:20.430611" elapsed="0.002007"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.432618" level="INFO">FAIL: Timeout reached for XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_TTX_Right_ve Expected 0.8 but found 0.05002203211188316</msg>
+<arg>FAIL: Timeout reached for ${Determined_sys_var_val} Expected ${expected_value} but found ${actual_value_Determined_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.432618" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.432618" level="INFO">FAIL: Where XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_ThreatConfRight_ve Expected Value is 1 but Found Value is 1</msg>
+<arg>FAIL: Where ${sys_var_Background_Check} Expected Value is ${backgound_check_value} but Found Value is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.432618" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.433615" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.432618" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:31:20.432618" elapsed="0.000997"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:20.430611" elapsed="0.003004"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:20.230318" elapsed="0.203297"/>
+</iter>
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.633963" level="INFO">Slept 200 milliseconds.</msg>
+<arg>0.20</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.433615" elapsed="0.200348"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.633963" level="INFO">${Var_iter} = 7</msg>
+<var>${Var_iter}</var>
+<arg>${Var_iter} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.633963" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${actual_value_background_check}' != '${backgound_check_value}'">
+<if>
+<branch type="IF" condition="'${actual_value_Determined_Var}' &lt; '${expected_value}'">
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: Achieved ${sys_var_Background_Check} Expectd Value ${backgound_check_value} Against Actual Value ${actual_value_background_check_Prinatable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.633963" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: When ${Determined_sys_var_val} Value is Greater than ${actual_value_Determined_Var_Printable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.633963" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: ${Determined_sys_var_val} reached less than expected ${expected_value} when ${sys_var_Background_Check} value is Not ${backgound_check_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.634975" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: And Found Value is ${actual_value_Determined_Var} for ${Determined_sys_var_val} When coming out of Loop</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.634975" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: And Found Value for ${sys_var_Background_Check} is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.634975" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:20.634975" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:20.634975" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:20.633963" elapsed="0.001012"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:20.633963" elapsed="0.001012"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:20.633963" elapsed="0.001012"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.634975" level="INFO">FAIL: Timeout reached for XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_TTX_Right_ve Expected 0.8 but found 0.05002203211188316</msg>
+<arg>FAIL: Timeout reached for ${Determined_sys_var_val} Expected ${expected_value} but found ${actual_value_Determined_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.634975" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.634975" level="INFO">FAIL: Where XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_ThreatConfRight_ve Expected Value is 1 but Found Value is 1</msg>
+<arg>FAIL: Where ${sys_var_Background_Check} Expected Value is ${backgound_check_value} but Found Value is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.634975" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.634975" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.634975" elapsed="0.000996"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:31:20.634975" elapsed="0.000996"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:20.633963" elapsed="0.002008"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:20.433615" elapsed="0.202356"/>
+</iter>
+<status status="PASS" start="2025-02-22T07:31:19.219327" elapsed="1.416644"/>
+</while>
+<if>
+<branch type="IF" condition="'${found}' == 'False'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.635971" level="INFO">FAIL: Timeout reached for XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_TTX_Right_ve Expected 0.8 but found 0.05002203211188316</msg>
+<arg>FAIL: Timeout reached for ${Determined_sys_var_val} Expected ${expected_value} but found ${actual_value_Determined_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.635971" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.635971" level="INFO">FAIL: Where XCP::APU::ActivityPostProc_activity::g_fifaThreatAssessmentIn::m_fifaThreatAssessmentDataOutput::m_fifaThreatAssessmentCtaOutput::TA_CTA_ThreatConfRight_ve Expected Value is 1 but Found Value is 1</msg>
+<arg>FAIL: Where ${sys_var_Background_Check} Expected Value is ${backgound_check_value} but Found Value is ${actual_value_background_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.635971" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.636971" level="FAIL">Ooops there is Failure !!! Check the Log Section for Values....</msg>
+<arg>${found}</arg>
+<arg>Ooops there is Failure !!! Check the Log Section for Values....</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-02-22T07:31:20.635971" elapsed="0.001000">Ooops there is Failure !!! Check the Log Section for Values....</status>
+</kw>
+<status status="FAIL" start="2025-02-22T07:31:20.635971" elapsed="0.001000">Ooops there is Failure !!! Check the Log Section for Values....</status>
+</branch>
+<status status="FAIL" start="2025-02-22T07:31:20.635971" elapsed="0.001000">Ooops there is Failure !!! Check the Log Section for Values....</status>
+</if>
+<arg>${TA_CTA_ThreatConfRight_ve}</arg>
+<arg>${TA_CTA_TTX_Right_ve}</arg>
+<arg>0.8</arg>
+<arg>1</arg>
+<arg>20</arg>
+<arg>6</arg>
+<status status="FAIL" start="2025-02-22T07:31:16.127779" elapsed="4.509192">Ooops there is Failure !!! Check the Log Section for Values....</status>
+</kw>
+<doc>Verifies the CTA Feature Activation From Left hand Side RQM ID &lt;a href="https://rb-alm-13-p.de.bosch.com/qm/web/console/Ford_DAT3%20(qm)#action=com.ibm.rqm.planning.home.actionDispatcher&amp;subAction=viewTestCase&amp;id=2818879"&gt;.</doc>
+<tag>TC-2818879</tag>
+<status status="FAIL" start="2025-02-22T07:31:12.008599" elapsed="8.628372">Ooops there is Failure !!! Check the Log Section for Values....</status>
+</test>
+<test id="s1-t8" name="Test Post Condition" line="141">
+<kw name="Compare System Variable Value">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:20.639002" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.639002" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:21.640143" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.640004" elapsed="1.000139"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:21.658191" level="INFO">${actual_value} = 8</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:21.640143" elapsed="0.018048"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:21.659191" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:21.659191" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:21.659191" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:21.659191" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:21.659191" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:21.658191" elapsed="0.001000"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:21.659191" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:21.659191" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:21.659191" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:21.659191" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:21.659191" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:21.658191" elapsed="0.001000"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-22T07:31:20.640004" elapsed="1.019187"/>
+</iter>
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:22.660689" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:21.660192" elapsed="1.000497"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:22.687138" level="INFO">${actual_value} = 8</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:22.660689" elapsed="0.026449"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:22.687138" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:22.687138" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:22.688136" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:22.687138" elapsed="0.000998"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:22.687138" elapsed="0.000998"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:22.687138" elapsed="0.000998"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:22.688136" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:22.688136" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:22.688136" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:22.688136" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:22.688136" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:22.687138" elapsed="0.000998"/>
+</if>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-02-22T07:31:21.660192" elapsed="1.027944"/>
+</iter>
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:23.688832" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:22.688136" elapsed="1.000696"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:23.698351" level="INFO">${actual_value} = 8</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:23.688832" elapsed="0.009519"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:23.698351" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:23.698351" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:23.698351" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:23.698351" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:23.698351" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:23.698351" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:23.698351" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:23.698351" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:23.698351" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:23.698351" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:23.698351" elapsed="0.001003"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:23.698351" elapsed="0.001003"/>
+</if>
+<var name="${i}">2</var>
+<status status="PASS" start="2025-02-22T07:31:22.688136" elapsed="1.011218"/>
+</iter>
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:24.699641" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:23.699354" elapsed="1.000287"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:24.709055" level="INFO">${actual_value} = 8</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:24.699641" elapsed="0.009414"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:24.710056" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:24.710056" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:24.710056" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:24.710056" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:24.710056" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:24.709055" elapsed="0.001001"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:24.710056" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:24.710056" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:24.710056" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:24.710056" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:24.710056" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:24.709055" elapsed="0.001001"/>
+</if>
+<var name="${i}">3</var>
+<status status="PASS" start="2025-02-22T07:31:23.699354" elapsed="1.010702"/>
+</iter>
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:25.711128" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:24.711056" elapsed="1.000072"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:25.714253" level="INFO">${actual_value} = 8</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:25.711128" elapsed="0.003125"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:25.714253" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:25.714253" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:25.715248" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:25.714253" elapsed="0.000995"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:25.714253" elapsed="0.000995"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:25.714253" elapsed="0.000995"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:25.715248" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:25.715248" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:25.715248" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:25.715248" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:25.715248" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:25.714253" elapsed="0.000995"/>
+</if>
+<var name="${i}">4</var>
+<status status="PASS" start="2025-02-22T07:31:24.710056" elapsed="1.005192"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${TIMEOUT_For_Compare}</value>
+<status status="PASS" start="2025-02-22T07:31:20.639002" elapsed="5.076246"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:25.715248" level="INFO">Value of found: False this is after Breaking the Loop.</msg>
+<arg>Value of found: ${found} this is after Breaking the Loop.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:25.715248" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${found}'== 'True'">
+<kw name="Log" owner="BuiltIn">
+<arg>PASS: ${var_name} reached expected value ${expected_value} within timeout, found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:25.715248" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:31:25.715248" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:25.716248" level="INFO">FAIL: Timeout reached for CarMaker::SC::State. Expected 2 but found Actual value 8</msg>
+<arg>FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:25.715248" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:31:25.715248" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:25.715248" elapsed="0.001000"/>
+</if>
+<arg>${Carmaker_Running_State}</arg>
+<arg>2</arg>
+<arg>${None}</arg>
+<arg>${TIMEOUT}</arg>
+<status status="PASS" start="2025-02-22T07:31:20.637971" elapsed="5.078277"/>
+</kw>
+<kw name="Set System Variable">
+<kw name="Set System Variable Val" owner="Py_RobotFramwork_Input_File">
+<arg>${var_name}</arg>
+<arg>${value}</arg>
+<doc>Set a system variable value in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:25.716248" elapsed="1.006074"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:26.722322" level="INFO">Set system variable Customer_specific::cm_stopsim to 1</msg>
+<arg>Set system variable ${var_name} to ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:26.722322" elapsed="0.000000"/>
+</kw>
+<arg>${Stop_CM_Button}</arg>
+<arg>1</arg>
+<status status="PASS" start="2025-02-22T07:31:25.716248" elapsed="1.006074"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:29.722396" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:26.722322" elapsed="3.000074"/>
+</kw>
+<kw name="XCP Disconnect">
+<kw name="Call Xcp Connection" owner="Py_RobotFramwork_Input_File">
+<arg>${capl_test_module}</arg>
+<doc>This Function is for Calling CAPL Test Module and Execute them</doc>
+<status status="PASS" start="2025-02-22T07:31:29.722900" elapsed="11.834216"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:41.557116" level="INFO">XCP Disconnection Called Sucessfully</msg>
+<arg>XCP Disconnection Called Sucessfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:41.557116" elapsed="0.000000"/>
+</kw>
+<arg>${Test_Disonnect_Xcp}</arg>
+<status status="PASS" start="2025-02-22T07:31:29.722900" elapsed="11.834216"/>
+</kw>
+<kw name="Compare System Variable Value">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:41.558162" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:41.558162" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:42.558289" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:41.558162" elapsed="1.000127"/>
+</kw>
+<kw name="Get System Variable Val" owner="Py_RobotFramwork_Input_File">
+<msg time="2025-02-22T07:31:42.570216" level="INFO">${actual_value} = 1</msg>
+<var>${actual_value}</var>
+<arg>${var_name}</arg>
+<doc>Get the value of a system variable in CANoe.</doc>
+<status status="PASS" start="2025-02-22T07:31:42.558289" elapsed="0.011927"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tolerance}' != '${None}'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${diff}</var>
+<arg>abs(${expected_value} - ${actual_value})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:42.570216" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${diff}' &lt;= '${tolerance}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:42.570216" elapsed="0.000000"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-02-22T07:31:42.570216" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2025-02-22T07:31:42.570216" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2025-02-22T07:31:42.570216" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2025-02-22T07:31:42.570216" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="'${tolerance}' == '${None}'">
+<if>
+<branch type="IF" condition="'${actual_value}' == '${expected_value}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T07:31:42.571215" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T07:31:42.570216" elapsed="0.000999"/>
+</kw>
+<break>
+<status status="PASS" start="2025-02-22T07:31:42.571215" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2025-02-22T07:31:42.570216" elapsed="0.000999"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:42.570216" elapsed="0.000999"/>
+</if>
+<status status="PASS" start="2025-02-22T07:31:42.570216" elapsed="0.000999"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:42.570216" elapsed="0.000999"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-22T07:31:41.558162" elapsed="1.013053"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${TIMEOUT_For_Compare}</value>
+<status status="PASS" start="2025-02-22T07:31:41.558162" elapsed="1.013053"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:42.571215" level="INFO">Value of found: True this is after Breaking the Loop.</msg>
+<arg>Value of found: ${found} this is after Breaking the Loop.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:42.571215" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${found}'== 'True'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T07:31:42.571215" level="INFO">PASS: Obejct_Vehicle_Speed::XCP_Connection_Failed reached expected value 1 within timeout, found Actual value 1</msg>
+<arg>PASS: ${var_name} reached expected value ${expected_value} within timeout, found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T07:31:42.571215" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-22T07:31:42.571215" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-22T07:31:42.571215" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-22T07:31:42.571215" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-22T07:31:42.571215" elapsed="0.000000"/>
+</if>
+<arg>${Test_Disonnect_Xcp_Sts}</arg>
+<arg>1</arg>
+<arg>${None}</arg>
+<arg>${TIMEOUT}</arg>
+<status status="PASS" start="2025-02-22T07:31:41.557116" elapsed="1.014099"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-22T07:31:45.572700" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-22T07:31:42.572216" elapsed="3.000484"/>
+</kw>
+<doc>Verifies the Speed of EGO Vehicle and Target Vehicle.</doc>
+<status status="PASS" start="2025-02-22T07:31:20.637971" elapsed="24.934729"/>
+</test>
+<status status="FAIL" start="2025-02-22T07:26:24.692488" elapsed="320.880212"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">TC-2818879</stat>
+</tag>
+<suite>
+<stat name="RobotFramework POC Test 1" id="s1" pass="7" fail="1" skip="0">RobotFramework POC Test 1</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-02-22T07:26:24.683544" level="WARN">Error in file 'D:\Users\rzp2kor\python_prj\RobotFramework_POC_Test_1.robot' on line 275: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-02-22T07:26:24.683973" level="WARN">Error in file 'D:\Users\rzp2kor\python_prj\RobotFramework_POC_Test_1.robot' on line 281: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>

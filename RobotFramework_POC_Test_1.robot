@@ -128,7 +128,6 @@ Test To Set EGO and Target Vehicle Speed
 	Sleep     1
     Set System Variable    ${Carmake_Scenario_Start}    1
 	Sleep     3
- 
 
 Test CTA Feature Activation From Right Hand Side
     [Documentation]    Verifies the CTA Feature Activation From Left hand Side RQM ID <a href="https://rb-alm-13-p.de.bosch.com/qm/web/console/Ford_DAT3%20(qm)#action=com.ibm.rqm.planning.home.actionDispatcher&subAction=viewTestCase&id=2818879">.
@@ -136,18 +135,17 @@ Test CTA Feature Activation From Right Hand Side
     Compare System Variable Value     ${READ_EGO_VEHICLE_SPEED}     0.0     0.2     ${TIMEOUT}
     Compare System Variable Value     ${READ_TARGET_VEHICLE_OBJ_0}     35.80     0.30     12
     Compare System Variable Two Values in AND Condition   ${TA_CTA_TTX_Right_ve}   0.10   ${TA_CTA_TTX_Right_ve}   3.00     20
-    Check Value Valid    ${TA_CTA_ThreatConfRight_ve}     ${TA_CTA_TTX_Right_ve}   0.8    1    20    6
+    Check Value Valid    ${TA_CTA_ThreatConfRight_ve}     ${TA_CTA_TTX_Right_ve}   0.8    1    6
 
 Test Post Condition
     [Documentation]    Verifies the Speed of EGO Vehicle and Target Vehicle.
-    Compare System Variable Value      ${Carmaker_Running_State}    2   ${None}    ${TIMEOUT}       # Here Value 2 is Carmaker Idle state
+    Compare System Variable Value      ${Carmaker_Running_State}    2   ${None}    60       # Here Value 2 is Carmaker Idle state
     Set System Variable    ${Stop_CM_Button}       1
     Sleep    3
     XCP Disconnect    ${Test_Disonnect_Xcp}
     Compare System Variable Value    ${Test_Disonnect_Xcp_Sts}    1     ${None}    ${TIMEOUT}
     Sleep    3
     #Stop Measurement
-
 
 
 *** Keywords ***
@@ -197,11 +195,12 @@ Compare System Variable Value
     IF    '${found}'== 'True'
         Log    PASS: ${var_name} reached expected value ${expected_value} within timeout, found Actual value ${actual_value}
     ELSE
-        Log    FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}  
+        Log    FAIL: Timeout reached for ${var_name}. Expected ${expected_value} but found Actual value ${actual_value}
+        Should Be True    ${found}   Ooops there is Failure !!! Check the Log Section for Values....
 	END
     
 Check Value Valid
-    [Arguments]     ${sys_var_Background_Check}     ${Determined_sys_var_val}    ${expected_value}    ${backgound_check_value}    ${Break_Time}     ${Wait_Time_Expected}
+    [Arguments]     ${sys_var_Background_Check}     ${Determined_sys_var_val}    ${expected_value}    ${backgound_check_value}   ${Wait_Time_Expected}
     # Pass Value argument "expected_value" for Determined_sys_var_val and backgound_check_value or Value Valid Condition for sys_var_Background_Check
     # Break Time is for how long user want to check Value Valid Condition
    # ${start_time}=    Get Time
@@ -223,10 +222,6 @@ Check Value Valid
         ELSE
               Log    Found the value!. ${Determined_sys_var_val} Result: ${actual_value_Determined_Var}
               BREAK
-        END
-        ${Counter}  Evaluate    ${Counter} + 1
-        IF   '${Break_Time}' == '${Counter}'
-              BREAK    # Break the while loop once Break time for particular value valid breach the maximum limit
         END
     END
     ${Var_iter}   Set Variable     0
@@ -253,9 +248,9 @@ Check Value Valid
              END
     END
     IF    '${found}' == 'False'
-        # Should Be True    ${found}
          Log    FAIL: Timeout reached for ${Determined_sys_var_val} Expected ${expected_value} but found ${actual_value_Determined_Var}
          Log    FAIL: Where ${sys_var_Background_Check} Expected Value is ${backgound_check_value} but Found Value is ${actual_value_background_check}
+         Should Be True    ${found}   Ooops there is Failure !!! Check the Log Section for Values....
     END
 
 Stop Measurement
@@ -320,5 +315,6 @@ Compare System Variable Two Values in AND Condition
             Log    PASS: ${var_name_1} reached expected value ${expected_value_1} within timeout,found Actual Value ${actual_value_1} 
             Log    PASS: ${Var_Name_2} reached expected value ${expected_value_1} within timeout,found Actual Value ${actual_value_2}
         ELSE
-            Log    FAIL: Timeout reached for ${var_name_1} and ${var_name_2} Expected ${expected_value_1} and ${expected_value_2}but found Actual Values ${actual_value_1} and ${actual_value_2}   
+            Log    FAIL: Timeout reached for ${var_name_1} and ${var_name_2} Expected ${expected_value_1} and ${expected_value_2}but found Actual Values ${actual_value_1} and ${actual_value_2}
+            Should Be True    ${found}   Ooops there is Failure !!! Check the Log Section for Values....
         END
