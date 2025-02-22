@@ -136,7 +136,7 @@ Test CTA Feature Activation From Right Hand Side
     Compare System Variable Value     ${READ_EGO_VEHICLE_SPEED}     0.0     0.2     ${TIMEOUT}
     Compare System Variable Value     ${READ_TARGET_VEHICLE_OBJ_0}     35.80     0.30     12
     Compare System Variable Two Values in AND Condition   ${TA_CTA_TTX_Right_ve}   0.10   ${TA_CTA_TTX_Right_ve}   3.00     20
-    Check Value Valid    ${TA_CTA_ThreatConfRight_ve}     ${TA_CTA_TTX_Right_ve}   0.8    1    20
+    Check Value Valid    ${TA_CTA_ThreatConfRight_ve}     ${TA_CTA_TTX_Right_ve}   0.8    1    20    6
 
 Test Post Condition
     [Documentation]    Verifies the Speed of EGO Vehicle and Target Vehicle.
@@ -201,14 +201,16 @@ Compare System Variable Value
 	END
     
 Check Value Valid
-    [Arguments]     ${sys_var_Background_Check}     ${Determined_sys_var_val}    ${expected_value}    ${backgound_check_value}    ${Break_Time}
+    [Arguments]     ${sys_var_Background_Check}     ${Determined_sys_var_val}    ${expected_value}    ${backgound_check_value}    ${Break_Time}     ${Wait_Time_Expected}
     # Pass Value argument "expected_value" for Determined_sys_var_val and backgound_check_value or Value Valid Condition for sys_var_Background_Check
     # Break Time is for how long user want to check Value Valid Condition
    # ${start_time}=    Get Time
    # Log    Time stamp where system var value start logging:  ${start_time}
-    ${found}=    Set Variable    False  # Initialize the found flag
     # Getting Sys Var value for Background check variable "Value Valid Operation"
     ${actual_value_background_check}=    Get System Variable Val    ${sys_var_Background_Check}
+    ${actual_value_Determined_Var}=    Get System Variable Val    ${Determined_sys_var_val}
+    ${actual_value_background_check_Prinatable}=   Set Variable   ${actual_value_background_check}  # To store temp Background Value
+    ${actual_value_Determined_Var_Printable}=      Set Variable   ${actual_value_Determined_Var}
     WHILE    ${actual_value_background_check} == ${backgound_check_value}
         ${actual_value_background_check}=    Get System Variable Val    ${sys_var_Background_Check}
         # Getting Sys Var Value check for Determind Var
@@ -216,22 +218,45 @@ Check Value Valid
         Sleep    1
         Log    Value of Value Valid Variable ${sys_var_Background_Check} is : ${actual_value_background_check}
         # Check if Determined_sys_var_val is the expected value within the loop
-        IF    '${actual_value_Determined_Var}' == '${expected_value}'
+        IF    '${actual_value_Determined_Var}' > '${expected_value}'
               Log    Found the value!. ${Determined_sys_var_val} Result: ${actual_value_Determined_Var}
-              ${found}=    Set Variable    True  # Set flg to TRUE when Condition met
+        ELSE
+              Log    Found the value!. ${Determined_sys_var_val} Result: ${actual_value_Determined_Var}
               BREAK
         END
         ${Counter}  Evaluate    ${Counter} + 1
-        IF   '${Break_Time}' != '${Counter}'
+        IF   '${Break_Time}' == '${Counter}'
               BREAK    # Break the while loop once Break time for particular value valid breach the maximum limit
         END
     END
-        IF    '${found}' == 'True'
-        Log    PASS: ${Determined_sys_var_val} reached expected value ${expected_value} within ${sys_var_Background_Check} value check and Found Value is ${actual_value_Determined_Var}
-    ELSE
-        Log    FAIL: Timeout reached for ${Determined_sys_var_val}. Expected ${expected_value} but found ${actual_value_Determined_Var}
-	END
-
+    ${Var_iter}   Set Variable     0
+    # Wait time Expected is for checking timeout even after Determined conditon arivied still user need some time to achieve Back Ground Check to be true.
+    WHILE    ${Var_iter} <= ${Wait_Time_Expected}
+            Sleep    0.20
+            ${actual_value_background_check}=    Get System Variable Val    ${sys_var_Background_Check}
+            ${actual_value_Determined_Var}=    Get System Variable Val    ${Determined_sys_var_val}
+            ${Var_iter}  Evaluate    ${Var_iter} + 1
+             IF    '${actual_value_background_check}' != '${backgound_check_value}'
+                 IF    '${actual_value_Determined_Var}' < '${expected_value}'
+                      Log    PASS: Achieved ${sys_var_Background_Check} Expectd Value ${backgound_check_value} Against Actual Value ${actual_value_background_check_Prinatable}
+                      Log    PASS: When ${Determined_sys_var_val} Value is Greater than ${actual_value_Determined_Var_Printable}
+                      Log    PASS: ${Determined_sys_var_val} reached less than expected ${expected_value} when ${sys_var_Background_Check} value is Not ${backgound_check_value}
+                      Log    PASS: And Found Value is ${actual_value_Determined_Var} for ${Determined_sys_var_val} When coming out of Loop
+                      Log    PASS: And Found Value for ${sys_var_Background_Check} is ${actual_value_background_check}
+                      ${found}=    Set Variable    True
+                      BREAK
+                 END
+             ELSE
+                Log    FAIL: Timeout reached for ${Determined_sys_var_val} Expected ${expected_value} but found ${actual_value_Determined_Var}
+                Log    FAIL: Where ${sys_var_Background_Check} Expected Value is ${backgound_check_value} but Found Value is ${actual_value_background_check}
+                ${found}=    Set Variable    False
+             END
+    END
+    IF    '${found}' == 'False'
+        # Should Be True    ${found}
+         Log    FAIL: Timeout reached for ${Determined_sys_var_val} Expected ${expected_value} but found ${actual_value_Determined_Var}
+         Log    FAIL: Where ${sys_var_Background_Check} Expected Value is ${backgound_check_value} but Found Value is ${actual_value_background_check}
+    END
 
 Stop Measurement
     Halt Measurement

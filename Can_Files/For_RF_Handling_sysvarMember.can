@@ -9,14 +9,14 @@ variables
 
 }
 
-	
+/*	
 on sysvar_update sysvar::Obejct_Vehicle_Speed::Target_Veh_0
 {  
   // Setting Target Vehicle speed and status Value
    @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_target_a_long[0]= @sysvar::Obejct_Vehicle_Speed::Target_Veh_0;
    @sysvarMember::Classe_Obj_Sim::obj_ctrl.ctrl_status_velocity[0] = @sysvar::Obejct_Vehicle_Speed::Target_Veh_Status_0;
   // Reading Target Vehicle speed
-   @sysvar::Obejct_Vehicle_Speed::Target_Veh_0= @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_v_long[0];
+  // @sysvar::Obejct_Vehicle_Speed::Target_Veh_0= @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_v_long[0];
    @sysvar::Obejct_Vehicle_Speed::Target_Veh_Speed_Read_0= @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_v_long[0];
 }
 
@@ -26,9 +26,28 @@ on sysvar_update sysvar::Obejct_Vehicle_Speed::Target_Veh_1
    @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_target_a_long[1]= @sysvar::Obejct_Vehicle_Speed::Target_Veh_1;
    @sysvarMember::Classe_Obj_Sim::obj_ctrl.ctrl_status_velocity[1] = @sysvar::Obejct_Vehicle_Speed::Target_Veh_Status_1;
   // Reading Target Vehicle speed
-   @sysvar::Obejct_Vehicle_Speed::Target_Veh_1= @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_target_a_long[1];
+ //  @sysvar::Obejct_Vehicle_Speed::Target_Veh_1= @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_target_a_long[1];
    @sysvar::Obejct_Vehicle_Speed::Target_Veh_Speed_Read_1= @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_v_long[1];
-}
+}*/
 
+
+
+
+
+void MainTest ()
+{
+      
+  while(1)
+   {
+      // Setting Target Vehicle speed and status Value
+      testWaitForTimeout(1);
+      @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_target_v_long[0]= @sysvar::Obejct_Vehicle_Speed::Target_Veh_0;
+      @sysvarMember::Classe_Obj_Sim::obj_ctrl.ctrl_status_velocity[0] = @sysvar::Obejct_Vehicle_Speed::Target_Veh_Status_0;
+  // Reading Target Vehicle speed
+  // @sysvar::Obejct_Vehicle_Speed::Target_Veh_0= @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_v_long[0];
+      @sysvar::Obejct_Vehicle_Speed::Target_Veh_Speed_Read_0= @sysvarMember::Classe_Obj_Sim::obj_ctrl.obj_v_long[0];
+   }
+  
+}
 
 

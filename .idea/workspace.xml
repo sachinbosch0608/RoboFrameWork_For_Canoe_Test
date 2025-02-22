@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ed7b2a7b-d7c2-47ac-8f3d-2d41e8c6ad6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Can_Files/For_RF_XCP_Connect_Test.can" beforeDir="false" afterPath="$PROJECT_DIR$/Can_Files/For_RF_XCP_Connect_Test.can" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Can_Files/For_RF_XCP_disconnect_Test.can" beforeDir="false" afterPath="$PROJECT_DIR$/Can_Files/For_RF_XCP_disconnect_Test.can" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Can_Files/for_robotFramework.vsysvar" beforeDir="false" afterPath="$PROJECT_DIR$/Can_Files/for_robotFramework.vsysvar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Py_RobotFramwork_Input_File.py" beforeDir="false" afterPath="$PROJECT_DIR$/Py_RobotFramwork_Input_File.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Can_Files/For_RF_Handling_sysvarMember.can" beforeDir="false" afterPath="$PROJECT_DIR$/Can_Files/For_RF_Handling_sysvarMember.can" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Can_Files/Test_Robo.tse" beforeDir="false" afterPath="$PROJECT_DIR$/Can_Files/Test_Robo.tse" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RobotFramework_POC_Test_1.robot" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFramework_POC_Test_1.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/py_try.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_try.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
