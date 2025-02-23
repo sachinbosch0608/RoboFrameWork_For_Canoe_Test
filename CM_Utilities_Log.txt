@@ -1,60 +1,68 @@
 =============================
 CM Utilities Log!
 =============================
-::INFO:: 2025-02-03 12:23:26.593657: Build Info:
-::INFO:: 2025-02-03 12:23:26.594657: 	Version: v2.10.8
-::DEBUG:: 2025-02-03 12:23:26.595657: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: git config core.quotepath off&&set LESSCHARSET=UTF-8
-::DEBUG:: 2025-02-03 12:23:26.663685: 	Call Succeeded!
-::INFO:: 2025-02-03 12:23:26.664685: Checking staged files big_files_sizes ...
-::DEBUG:: 2025-02-03 12:23:26.664685: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: set LESSCHARSET=UTF-8&&git diff --ignore-submodules --name-only --cached --diff-filter=M
-::DEBUG:: 2025-02-03 12:23:26.730478: 	Call Succeeded!
-::DEBUG:: 2025-02-03 12:23:26.730478: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: set LESSCHARSET=UTF-8&&git diff --ignore-submodules --name-only --cached --diff-filter=A
-::DEBUG:: 2025-02-03 12:23:26.795630: 	Call Succeeded!
-::DEBUG:: 2025-02-03 12:23:26.796666: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: git lfs ls-files --name-only 
-::DEBUG:: 2025-02-03 12:23:27.697651: 	Call Succeeded!
-::DEBUG:: 2025-02-03 12:23:27.697651: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: git cat-file -s :".gitattributes"
-::DEBUG:: 2025-02-03 12:23:27.763652: 	Call Succeeded!
-::DEBUG:: 2025-02-03 12:23:27.763652: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: git lfs ls-files --name-only 
-::DEBUG:: 2025-02-03 12:23:27.764720: 	Found in Cache!
-::DEBUG:: 2025-02-03 12:23:27.764720: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: git cat-file -s :"README.md"
-::DEBUG:: 2025-02-03 12:23:27.828894: 	Call Succeeded!
-::INFO:: 2025-02-03 12:23:27.828894: Checking staged files big_files_sizes: OK!
-::INFO:: 2025-02-03 12:23:27.829901: Checking number of new files ...
-::DEBUG:: 2025-02-03 12:23:27.829901: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: set LESSCHARSET=UTF-8&&git diff --ignore-submodules --name-only --cached --diff-filter=A
-::DEBUG:: 2025-02-03 12:23:27.829901: 	Found in Cache!
-::INFO:: 2025-02-03 12:23:27.830896: Checking number of new files: OK!
-::INFO:: 2025-02-03 12:23:27.830896: Checking total size of new files ...
-::DEBUG:: 2025-02-03 12:23:27.830896: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: set LESSCHARSET=UTF-8&&git diff --ignore-submodules --name-only --cached --diff-filter=A
-::DEBUG:: 2025-02-03 12:23:27.831895: 	Found in Cache!
-::DEBUG:: 2025-02-03 12:23:27.831895: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: git lfs ls-files --name-only 
-::DEBUG:: 2025-02-03 12:23:27.831895: 	Found in Cache!
-::DEBUG:: 2025-02-03 12:23:27.832895: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: git cat-file -s :".gitattributes"
-::DEBUG:: 2025-02-03 12:23:27.832895: 	Found in Cache!
-::DEBUG:: 2025-02-03 12:23:27.832895: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: git lfs ls-files --name-only 
-::DEBUG:: 2025-02-03 12:23:27.833895: 	Found in Cache!
-::DEBUG:: 2025-02-03 12:23:27.833895: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: git cat-file -s :"README.md"
-::DEBUG:: 2025-02-03 12:23:27.833895: 	Found in Cache!
-::DEBUG:: 2025-02-03 12:23:27.834895: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: set LESSCHARSET=UTF-8&&git diff --ignore-submodules --name-only --cached --diff-filter=M
-::DEBUG:: 2025-02-03 12:23:27.834895: 	Found in Cache!
-::INFO:: 2025-02-03 12:23:27.834895: Checking size increase due to staged files: OK!
-::INFO:: 2025-02-03 12:23:27.835895: Long Paths Check ...
-::DEBUG:: 2025-02-03 12:23:27.835895: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: git ls-files -c -z 
-::DEBUG:: 2025-02-03 12:23:27.905231: 	Call Succeeded!
-::INFO:: 2025-02-03 12:23:27.906273: NO SUBMODULE found
-::INFO:: 2025-02-03 12:23:27.906273: Long Path check: OK!
-::INFO:: 2025-02-03 12:23:27.907190: LFS List Check ... 
-::DEBUG:: 2025-02-03 12:23:27.907190: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: git ls-files -c -z 
-::DEBUG:: 2025-02-03 12:23:27.907190: 	Found in Cache!
-::INFO:: 2025-02-03 12:23:27.908189: NO SUBMODULE found
-::INFO:: 2025-02-03 12:23:27.915265: No suggestions regarding LFS list!
-::INFO:: 2025-02-03 12:23:27.915265: Submodules Check ... 
-::INFO:: 2025-02-03 12:23:27.916188: NO SUBMODULE found
-::INFO:: 2025-02-03 12:23:27.916188: Checking Files Duplication ...
-::DEBUG:: 2025-02-03 12:23:27.916188: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: set LESSCHARSET=UTF-8&&git diff --ignore-submodules --name-only --cached --diff-filter=M
-::DEBUG:: 2025-02-03 12:23:27.917189: 	Found in Cache!
-::DEBUG:: 2025-02-03 12:23:27.917189: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: set LESSCHARSET=UTF-8&&git diff --ignore-submodules --name-only --cached --diff-filter=A
-::DEBUG:: 2025-02-03 12:23:27.917189: 	Found in Cache!
-::DEBUG:: 2025-02-03 12:23:27.918189: CWD: C:/Users/RZP2KOR/Desktop/RobotFrameWork_Projects | CMD: git ls-files -c -z 
-::DEBUG:: 2025-02-03 12:23:27.918189: 	Found in Cache!
-::INFO:: 2025-02-03 12:23:27.918189: NO SUBMODULE found
-::INFO:: 2025-02-03 12:23:27.919190: cmUtilities Finished without problems
+::INFO:: 2025-02-23 13:36:45.801921: Build Info:
+::INFO:: 2025-02-23 13:36:45.802921: 	Version: v2.10.8
+::DEBUG:: 2025-02-23 13:36:45.804921: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: git config core.quotepath off&&set LESSCHARSET=UTF-8
+::DEBUG:: 2025-02-23 13:36:45.878737: 	Call Succeeded!
+::INFO:: 2025-02-23 13:36:45.879737: Checking staged files big_files_sizes ...
+::DEBUG:: 2025-02-23 13:36:45.879737: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: set LESSCHARSET=UTF-8&&git diff --ignore-submodules --name-only --cached --diff-filter=M
+::DEBUG:: 2025-02-23 13:36:45.964733: 	Call Succeeded!
+::DEBUG:: 2025-02-23 13:36:45.965734: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: set LESSCHARSET=UTF-8&&git diff --ignore-submodules --name-only --cached --diff-filter=A
+::DEBUG:: 2025-02-23 13:36:46.052482: 	Call Succeeded!
+::DEBUG:: 2025-02-23 13:36:46.052482: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: git lfs ls-files --name-only 
+::DEBUG:: 2025-02-23 13:36:47.251535: 	Call Succeeded!
+::DEBUG:: 2025-02-23 13:36:47.251535: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: git cat-file -s :"Test/requirements.txt"
+::DEBUG:: 2025-02-23 13:36:47.334637: 	Call Succeeded!
+::INFO:: 2025-02-23 13:36:47.335637: Checking staged files big_files_sizes: OK!
+::INFO:: 2025-02-23 13:36:47.335637: Checking number of new files ...
+::DEBUG:: 2025-02-23 13:36:47.336833: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: set LESSCHARSET=UTF-8&&git diff --ignore-submodules --name-only --cached --diff-filter=A
+::DEBUG:: 2025-02-23 13:36:47.337009: 	Found in Cache!
+::INFO:: 2025-02-23 13:36:47.337009: Checking number of new files: OK!
+::INFO:: 2025-02-23 13:36:47.337009: Checking total size of new files ...
+::DEBUG:: 2025-02-23 13:36:47.338074: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: set LESSCHARSET=UTF-8&&git diff --ignore-submodules --name-only --cached --diff-filter=A
+::DEBUG:: 2025-02-23 13:36:47.338074: 	Found in Cache!
+::DEBUG:: 2025-02-23 13:36:47.339074: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: git lfs ls-files --name-only 
+::DEBUG:: 2025-02-23 13:36:47.339074: 	Found in Cache!
+::DEBUG:: 2025-02-23 13:36:47.339907: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: git cat-file -s :"Test/requirements.txt"
+::DEBUG:: 2025-02-23 13:36:47.339907: 	Found in Cache!
+::DEBUG:: 2025-02-23 13:36:47.341048: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: set LESSCHARSET=UTF-8&&git diff --ignore-submodules --name-only --cached --diff-filter=M
+::DEBUG:: 2025-02-23 13:36:47.341048: 	Found in Cache!
+::INFO:: 2025-02-23 13:36:47.342027: Checking size increase due to staged files: OK!
+::INFO:: 2025-02-23 13:36:47.342027: Long Paths Check ...
+::DEBUG:: 2025-02-23 13:36:47.342027: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: git ls-files -c -z 
+::DEBUG:: 2025-02-23 13:36:47.422179: 	Call Succeeded!
+::INFO:: 2025-02-23 13:36:47.422179: NO SUBMODULE found
+::INFO:: 2025-02-23 13:36:47.423180: Long Path check: OK!
+::INFO:: 2025-02-23 13:36:47.423180: LFS List Check ... 
+::DEBUG:: 2025-02-23 13:36:47.424179: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: git ls-files -c -z 
+::DEBUG:: 2025-02-23 13:36:47.424179: 	Found in Cache!
+::INFO:: 2025-02-23 13:36:47.425179: NO SUBMODULE found
+::INFO:: 2025-02-23 13:36:47.435180: No suggestions regarding LFS list!
+::INFO:: 2025-02-23 13:36:47.436181: Submodules Check ... 
+::INFO:: 2025-02-23 13:36:47.436181: NO SUBMODULE found
+::INFO:: 2025-02-23 13:36:47.436181: Checking Files Duplication ...
+::DEBUG:: 2025-02-23 13:36:47.437180: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: set LESSCHARSET=UTF-8&&git diff --ignore-submodules --name-only --cached --diff-filter=M
+::DEBUG:: 2025-02-23 13:36:47.437180: 	Found in Cache!
+::DEBUG:: 2025-02-23 13:36:47.438179: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: set LESSCHARSET=UTF-8&&git diff --ignore-submodules --name-only --cached --diff-filter=A
+::DEBUG:: 2025-02-23 13:36:47.438179: 	Found in Cache!
+::DEBUG:: 2025-02-23 13:36:47.438179: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: git ls-files -c -z 
+::DEBUG:: 2025-02-23 13:36:47.439181: 	Found in Cache!
+::INFO:: 2025-02-23 13:36:47.439181: NO SUBMODULE found
+::DEBUG:: 2025-02-23 13:36:47.440180: Comparing 2 files with basename: requirements.txt
+::DEBUG:: 2025-02-23 13:36:47.440180: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: git lfs ls-files --name-only 
+::DEBUG:: 2025-02-23 13:36:47.440180: 	Found in Cache!
+::DEBUG:: 2025-02-23 13:36:47.441179: CWD: C:/Users/RZP2KOR/Desktop/RoboFrameWork_For_Canoe_Test | CMD: git cat-file -p :"Test/requirements.txt"
+::DEBUG:: 2025-02-23 13:36:47.517764: 	Call Succeeded!
+::ERROR:: 2025-02-23 13:36:47.518776: CM Utilities threw an Exception: 'NoneType' object has no attribute 'encode'
+Traceback (most recent call last):
+  File "dev\src\Cli.py", line 17, in execute_wrapper
+  File "dev\src\Cli.py", line 134, in execute
+  File "dev\src\Cli.py", line 37, in execute_precommit
+  File "dev\src\git\PreCommitChecks.py", line 29, in execute
+  File "dev\src\common\utilities.py", line 82, in perform_check_return_error
+  File "dev\src\git\PreCommitChecks.py", line 24, in <lambda>
+  File "dev\src\git\PreCommitChecks.py", line 99, in file_duplication_check
+  File "dev\src\git\GitOperations.py", line 293, in get_duplicates_for_hash
+AttributeError: 'NoneType' object has no attribute 'encode'
+
