@@ -130,7 +130,7 @@ Test To Set EGO and Target Vehicle Speed
 	Sleep     3
 
 Test CTA Feature Activation From Right Hand Side
-    [Documentation]    Verifies the CTA Feature Activation From Left hand Side, [RQM ID] (https://rb-alm-13-p.de.bosch.com/qm/web/console/Ford_DAT3%20(qm)#action=com.ibm.rqm.planning.home.actionDispatcher&subAction=viewTestCase&id=2818879).
+    [Documentation]    Verifies the CTA Feature Activation From Left hand Side RQM ID <a href="https://rb-alm-13-p.de.bosch.com/qm/web/console/Ford_DAT3%20(qm)#action=com.ibm.rqm.planning.home.actionDispatcher&subAction=viewTestCase&id=2818879">.
     [Tags]    TC-2818879
     Compare System Variable Value     ${READ_EGO_VEHICLE_SPEED}     0.0     0.2     ${TIMEOUT}
     Compare System Variable Value     ${READ_TARGET_VEHICLE_OBJ_0}     35.80     0.30     12
