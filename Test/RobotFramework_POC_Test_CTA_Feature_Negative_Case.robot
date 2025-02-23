@@ -21,7 +21,7 @@ ${HIL_MODE}                     4  # Carmksr Mode for HIL Mode
 ${HIL_MODE_VAR}                 hil_ctrl::hil_mode  # Make sure this is defined in CANoe config
 ${TIMEOUT}                      5  # Timeout in seconds
 ${TIMEOUT_For_Compare}          20  # Timeout for Comparsion value check
-${TEST_RUN}                     drv/SOD/CTX/CTA_90_Deg_Road_Side_Parking_Staright_Road.trn
+${TEST_RUN}                     drv/SOD/CTX/CTA_90_Deg_Parking_Lot_Parking_Negative_Case_right_target.trn
 ${Hil_Config_Mode}              hil_ctrl::configuration_ford
 ${Load_CM_Scenario}             Customer_specific::cm_scenario
 ${Load_CM_Scenario_Done}        Customer_specific::load_scenario
@@ -111,31 +111,35 @@ Test XCP Connect And Loading Carmaker Test Scenario
     Set System Variable    ${Load_CM_Scenario}    ${TEST_RUN}
 	Sleep     5            # Allow some dealy to load .trn and enable system var for load scenario
     Set System Variable    ${Load_CM_Scenario_Done}    1
-
-  # Sleep     2
-  # Quit Canoe
-  #  Sleep     2
+    # Check Default Values of CTA Signals
+    Compare System Variable Value       ${TA_CTA_TTX_Right_ve}     0.0     ${None}     2     # Checking XCP Connection status
+    Compare System Variable Value       ${TA_CTA_ThreatConfRight_ve}     0     ${None}     2     # Checking XCP Connection status
 
 Test To Set EGO and Target Vehicle Speed
     [Documentation]    Verifies the Speed of EGO Vehicle and Target Vehicle.
     Set System Variable    ${EGO_VEHICLE_SPEED_VAR}    0.0      # Host Vehicle in Standstill state, thus setting speed as 0.0 km/h
     Set System Variable    ${EGO_VEHICLE_STATUS_VAR}      1
-    Set System Variable    ${TARGET_VEHICLE_OBJ_0}     36.0     # Setting Target OBJ_0 to 36 km/h
-    Set System Variable    ${TARGET_VEHICLE_OBJ_1}     36.0     # Setting Target OBJ_0 to 36 km/h
+    Set System Variable    ${TARGET_VEHICLE_OBJ_0}     3.6    # Setting Target OBJ_0 to 3.6 km/h
     Set System Variable    ${TARGET_VEHICLE_OBJ_0_STS}      1
-    Set System Variable    ${TARGET_VEHICLE_OBJ_1_STS}      1
 	Set System Variable    ${Ego_Gear_Req}     1     # Setting Reverse Gear
 	Sleep     1
     Set System Variable    ${Carmake_Scenario_Start}    1
 	Sleep     3
 
-Test CTA Feature Activation From Right Hand Side
-    [Documentation]    Verifies the CTA Feature Activation From Left hand Side RQM ID <a href="https://rb-alm-13-p.de.bosch.com/qm/web/console/Ford_DAT3%20(qm)#action=com.ibm.rqm.planning.home.actionDispatcher&subAction=viewTestCase&id=2818879">.
-    [Tags]    TC-2818879
+Test CTA Feature Negative Test Case Low Speed Target From Right Side
+    [Documentation]    Verifies the CTA Feature Negative Case When Target Coming in Slow Speed from Right of Ego, [RQM ID] (https://rb-alm-13-p.de.bosch.com/qm/web/console/Ford_DAT3%20(qm)#action=com.ibm.rqm.planning.home.actionDispatcher&subAction=viewTestCase&id=3044111).
+    [Tags]    TC-3044111
     Compare System Variable Value     ${READ_EGO_VEHICLE_SPEED}     0.0     0.2     ${TIMEOUT}
-    Compare System Variable Value     ${READ_TARGET_VEHICLE_OBJ_0}     35.80     0.30     12
-    Compare System Variable Two Values in AND Condition   ${TA_CTA_TTX_Right_ve}   0.10   ${TA_CTA_TTX_Right_ve}   3.00     20
-    Check Value Valid    ${TA_CTA_ThreatConfRight_ve}     ${TA_CTA_TTX_Right_ve}   0.8    1    6
+    Compare System Variable Value     ${READ_TARGET_VEHICLE_OBJ_0}     3.4     0.30     12
+    #Compare System Variable Two Values in AND Condition   ${TA_CTA_TTX_Right_ve}   0.10   ${TA_CTA_TTX_Right_ve}   3.00     20
+   # Check Value Valid    ${TA_CTA_ThreatConfRight_ve}     ${TA_CTA_TTX_Right_ve}   0.8    1    6
+    FOR    ${i}    IN RANGE    0    20
+        Sleep    0.50
+        ${Get_Var_val}=  Get System Variable Val    ${TA_CTA_TTX_Right_ve}
+        Log    Value of ${TA_CTA_TTX_Right_ve} is ${Get_Var_val}
+        Compare System Var For Negative Cases  ${TA_CTA_ThreatConfRight_ve}  1   2
+    END
+
 
 Test Post Condition
     [Documentation]    Verifies the Speed of EGO Vehicle and Target Vehicle.
@@ -145,7 +149,10 @@ Test Post Condition
     XCP Disconnect    ${Test_Disonnect_Xcp}
     Compare System Variable Value    ${Test_Disonnect_Xcp_Sts}    1     ${None}    ${TIMEOUT}
     Sleep    3
-    #Stop Measurement
+    Stop Measurement
+    # Sleep     2
+    # Quit Canoe
+    #  Sleep     2
 
 
 *** Keywords ***
@@ -317,4 +324,26 @@ Compare System Variable Two Values in AND Condition
         ELSE
             Log    FAIL: Timeout reached for ${var_name_1} and ${var_name_2} Expected ${expected_value_1} and ${expected_value_2}but found Actual Values ${actual_value_1} and ${actual_value_2}
             Should Be True    ${found}   Ooops there is Failure !!! Check the Log Section for Values....
+        END
+
+Compare System Var For Negative Cases
+     [Arguments]    ${var_name}    ${expected_value}    ${TIMEOUT_For_Compare}
+        ${found}=    Set Variable    True  # Initialize the found flag
+        ${Counter}   Set Variable     0
+        WHILE    ${Counter} <= ${TIMEOUT_For_Compare}
+            Sleep    0.50
+            ${Get_Actaul}=   Get System Variable Val    ${var_name}
+            Log    Value Found for Signal ${var_name} is ${Get_Actaul}
+            IF    ${Get_Actaul} == ${expected_value}
+                Log    Value Found for Signal ${var_name} is ${Get_Actaul} and Expected Value is ${expected_value}
+                ${found}=    Set Variable    False
+                BREAK
+            END
+            ${Counter}   Evaluate    ${Counter}+1
+        END
+        IF    '${found}' == 'True'
+             Log    PASS: Test Pass Siganl ${var_name} Value ${Get_Actaul} has not reached to expectd value ${expected_value}
+        ELSE
+              Log    Value Found for Signal ${var_name} is ${Get_Actaul} and Expected Value is ${expected_value}
+              Should Be True    ${found}    Ooops there is Failure !!! Check the Log Section for Values....
         END
