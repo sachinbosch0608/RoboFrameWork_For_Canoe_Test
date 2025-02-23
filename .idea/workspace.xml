@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed7b2a7b-d7c2-47ac-8f3d-2d41e8c6ad6f" name="Changes" comment="Added files to Test Folder">
-      <change afterPath="$PROJECT_DIR$/Test/RobotFramework_POC_Test_1.robot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CM_Utilities_Log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CM_Utilities_Log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/RobotFramework_POC_Test_2.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Test/RobotFramework_POC_Test_2.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Run_All_Robot_Files_Current_DIR.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Run_All_Robot_Files_Current_DIR.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Results/log.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Results/output.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Results/report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/RobotFramework_POC_Test_1.robot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/RobotFramework_POC_Test_2.robot" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +91,17 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated README for more Information" />
