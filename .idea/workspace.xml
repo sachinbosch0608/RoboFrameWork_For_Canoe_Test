@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ed7b2a7b-d7c2-47ac-8f3d-2d41e8c6ad6f" name="Changes" comment="Added Test Folder Containing .bat creation for Running all .robot file from a specific directory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RobotFramework_POC_Test_1.robot" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFramework_POC_Test_1.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/RobotFramework_POC_Test_2.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Test/RobotFramework_POC_Test_2.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Run_All_Robot_Files_Current_DIR.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Run_All_Robot_Files_Current_DIR.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,18 +19,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
     {
-      "state": "OPEN",
-      "assignee": "sachinbosch0608",
-      "author": "sachinbosch0608"
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;sachinbosch0608&quot;,
+      &quot;author&quot;: &quot;sachinbosch0608&quot;
     }
   ],
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "sachinbosch0608",
-    "author": "sachinbosch0608"
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sachinbosch0608&quot;,
+    &quot;author&quot;: &quot;sachinbosch0608&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/sachinbosch0608/RoboFrameWork_For_Canoe_Test.git",
+    "accountId": "5a528fef-e12b-40d2-956c-515a96d2a5b6"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
