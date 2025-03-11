@@ -142,7 +142,7 @@ Test CTA Feature Negative Test Case Low Speed Target From Right Side
 
 
 Test Post Condition
-    [Documentation]    Verifies the Speed of EGO Vehicle and Target Vehicle.
+    [Documentation]    Check Post Test Conditions
     Compare System Variable Value      ${Carmaker_Running_State}    2   ${None}    60       # Here Value 2 is Carmaker Idle state
     Set System Variable    ${Stop_CM_Button}       1
     Sleep    3

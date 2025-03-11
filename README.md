@@ -2,7 +2,7 @@
 This Repo is for Robo Framework which is Designed for Vector Canoe Based Testing
 
 
-#Steps to Create .venv:
+# Steps to Create .venv:
 
 	1. python -m venv venv  
 
@@ -13,7 +13,7 @@ This Repo is for Robo Framework which is Designed for Vector Canoe Based Testing
 
 	4. venv\Scripts\deactivate, if work is done.
 
-#Steps to Work with Robot Frame Work Test
+# Steps to Work with Robot Frame Work Test
     
      1. In General if venv is create Just actiavte the venv
         Using Point number 2 in Above description then choose
@@ -28,3 +28,9 @@ This Repo is for Robo Framework which is Designed for Vector Canoe Based Testing
 
      4. Generate Test report with name as same as Test Suit Name, Here Test Suit is you .robot file name
         robot --output ./Results/Test_Suit_Name.xml --report ./Results/Report_Test_Suit_Name.html --log ./Results/Log_Test_Suit_Name.html Test_Suit_Name.robot
+
+# Alternate way to Execute all the TESTS With Existing Canoe base RobotFramework
+
+   1. Place all the .robot test files in Test Folder.
+   2. Activate your venv using step no. 2 mentioned in Above section where How to create .venv explained.
+   3. Run the Run_All_Robot_Files_Current_DIR.bat file which will execute all .robot test one after another in sequence 
