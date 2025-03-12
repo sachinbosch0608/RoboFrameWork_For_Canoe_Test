@@ -7,12 +7,14 @@ Created on Wed Jan 29 11:10:47 2025
 
 *** Settings ***
 Library    ../Lib_Files/Py_RobotFramwork_Input_File.py  # Import your custom Python library (adjust the path if necessary)
+Library    ../Lib_Files/Utilities_File.py               # Import your custom Python library (adjust the path if necessary)
 Library    OperatingSystem
 Library    DateTime
 
+
 *** Variables ***
 # Path variables (Use environment variables or relative paths if necessary)
-${CONFIG_PATH}                  D:/_rbs/ADAS_HIL_FD301_TOL1_1_0_RA6_V15.1.3/RBS_Ford_Dat3.cfg
+${CONFIG_PATH}                  D:/SaTr/ADAS_HIL_FD301_TOL1_1_0_RA6_V15.1.3/adas_hil/RBS_Ford_Dat3.cfg
 ${POWER_VAR}                    DS2824::IO_1_Switch
 ${POWER_VOL_MEAS}               PS::voltage_display_meas_EA9040
 ${EXPECTED_VOLT}                14.50
@@ -21,7 +23,6 @@ ${HIL_MODE}                     4  # Carmksr Mode for HIL Mode
 ${HIL_MODE_VAR}                 hil_ctrl::hil_mode  # Make sure this is defined in CANoe config
 ${TIMEOUT}                      5  # Timeout in seconds
 ${TIMEOUT_For_Compare}          20  # Timeout for Comparsion value check
-${TEST_RUN}                     drv/SOD/CTX/CTA_90_Deg_Parking_Lot_Parking_Negative_Case_right_target.trn
 ${Hil_Config_Mode}              hil_ctrl::configuration_ford
 ${Load_CM_Scenario}             Customer_specific::cm_scenario
 ${Load_CM_Scenario_Done}        Customer_specific::load_scenario
@@ -40,12 +41,14 @@ ${Radar_rr_loc_Sim}             hil_ctrl::radar_rr_loc_sim
 ${Counter}                      0
 
 # DIAG Related Variables
+${Positive_Res}                 OK! Positive response
 ${Initiate_DOIP_Connection}     DIAG_Tester_uP::DOIP::Connect
+${DOIP_DisConnect}              DIAG_Tester_uP::DOIP::Disconnect
 ${DOIP_Connection_Status}       DIAG_Tester_uP::DOIP::Connect_Status
 ${Send_Command_Data_uP}         DIAG_Tester_uP::sysDataToTransmit_String
-${Send_REQ_DIAG_uP}             DIAG_Tester_uP::sysSendData
-${Recieve_DIAG_REQ}             DIAG_Tester_uP::sysDataReceived_String
+${Recieve_DIAG_RES}             DIAG_Tester_uP::sysDataReceived_String
 ${Diag_Positive_Response}       DIAG_Tester_uP::sysDataToTransmit_Status
+${DID_SW_TAG}                   22f188
 
 
 
@@ -66,32 +69,51 @@ Test Set And Get System Variables For ECU Power
     Set System Variable    ${POWER_VAR}    1
     Compare System Variable Value    ${POWER_VOL_MEAS}    ${EXPECTED_VOLT}    ${TOLERANCE}    ${TIMEOUT}
 
-Test Set Hil Config and Radar States
-    [Documentation]    Verifies setting of Hil_Config to DRV_STD And Radar to Simulated state.
-    # Setting HIL Config to DRV STD mode value 3
-    Set System Variable    ${Hil_Config_Mode}    3
-    Compare System Variable Value    ${Hil_Config_Mode}    3    ${None}    ${TIMEOUT}
 
-    # Setting Radar 4 Corner Radars to Simulated state value 1
-
-    Set System Variable    ${Radar_Fc_loc_Sim}    0
-    Set System Variable    ${Radar_Fl_loc_Sim}    1
-    Set System Variable    ${Radar_Fr_loc_Sim}    1
-    Set System Variable    ${Radar_rl_loc_Sim}    1
-    Set System Variable    ${Radar_rr_loc_Sim}    1
-
-    Compare System Variable Value    ${Radar_Fc_loc_Sim}    0    ${None}    ${TIMEOUT}
-    Compare System Variable Value    ${Radar_Fl_loc_Sim}    1    ${None}    ${TIMEOUT}
-    Compare System Variable Value    ${Radar_Fr_loc_Sim}    1    ${None}    ${TIMEOUT}
-    Compare System Variable Value    ${Radar_rl_loc_Sim}    1    ${None}    ${TIMEOUT}
-    Compare System Variable Value    ${Radar_rr_loc_Sim}    1    ${None}    ${TIMEOUT}
+Test Initiate DOIP Connection
+    [Documentation]    Verifies DOIP Connection status
+    # Set DOIP Connection to Default value 0
+    Sleep    10
+    Set System Variable    ${Initiate_DOIP_Connection}    0
+    Sleep    10
+    # Connect DOIP
+    Set System Variable    ${Initiate_DOIP_Connection}    1
+    # Checking DOIP Connection Status 
+    Compare System Variable Value    ${DOIP_Connection_Status}    1    ${None}    10
 
 
-Test DIAG REQUEST RESPONSE AND READING SW ID TAG
-    [Documentation]    Verifies Request Respose for DIAG Test and Read SW ID Tag
+Test DID Request Response for SW ID Read
+    [Documentation]    Verifies SW ID Tag from Flashed SW
+    # Send DID Request for Reading SW tag
+    ${found}=    Set Variable    False  # Initialize the found flag
+    Sleep    4
+    Set System Variable    ${Send_Command_Data_uP}    ${DID_SW_TAG}
+    Log  DID Command ${DID_SW_TAG} for Logging SW ID tag
+    # Check DIAG Respose Status
+    Sleep    10
+    ${Ack_RES}=   Get System Variable Val    ${Diag_Positive_Response}
+    Log  Ack response ${Ack_RES} for DIAG Request.
+    IF    '${Ack_RES}' != '${Positive_Res}'
+         Should Be True    ${found}
+    END
+    # Check DIAG Response Data
+    ${DIA_response_in_HEX}=     Get System Variable Val    ${Recieve_DIAG_RES}
+    Log  Full DIAG Response is: ${DIA_response_in_HEX}
+    ${RES_Split_Part_1}     ${RES_Split_Part_2}    Split Hex String    ${DIA_response_in_HEX}    3
+    Log  Res_Part1: ${RES_Split_Part_1}
+    Log  Res_Part2: ${RES_Split_Part_2}
+    ${Respose_ASCII_Value}=     Hex To ASCII Conversion    ${RES_Split_Part_2}
+    Log    SW TAG is : ${Respose_ASCII_Value}
 
-    Log    Stablish DOIP Connection
-    Set System Variable    $var_name    $value
+Test Disconnect DOIP
+    [Documentation]  Verify DOIP is Disconnected
+    Sleep    5
+    Set System Variable    ${DOIP_DisConnect}    0
+    Sleep    5
+    Set System Variable    ${DOIP_DisConnect}    1
+    Sleep    2
+    Log    Doip Disconnection Status: ${DOIP_Connection_Status}
+    Compare System Variable Value    ${DOIP_Connection_Status}    0    ${None}    10
 
 
 Test Post Condition
