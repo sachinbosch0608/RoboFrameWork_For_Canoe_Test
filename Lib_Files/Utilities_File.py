@@ -28,3 +28,23 @@ class utilities:
         ascii_string = response_byte_data.decode('ascii')
 
         return ascii_string
+
+    @keyword
+    def DTCs_Status_2C_2F(self,input_str):
+        # List to store substrings ending with '2c' and '2f'
+        list_2c = []
+        list_2f = []
+
+        # Split string into 4-byte chunks
+        for i in range(0, len(input_str), 8):  # Step by 8 because each 4 bytes = 8 chars in hex
+            chunk = input_str[i:i + 8]
+            if chunk:  # Make sure chunk is not empty
+                # Get last 2 characters (last byte in hex)
+                last_byte = chunk[-2:]
+                # Sort into appropriate list
+                if last_byte == '2c':
+                    list_2c.append(chunk)
+                elif last_byte == '2f':
+                    list_2f.append(chunk)
+
+        return list_2c, list_2f

@@ -39,6 +39,11 @@ class Canoelibrary:
         return self.canoe_inst.get_system_variable_value(var_name)
 
     @keyword
+    def get_signal_value(self, can_bus,channel,message_name,signal_name,raw_value):
+        """Get the value of a CAN Signal variable in CANoe."""
+        return self.canoe_inst.get_signal_value(can_bus,channel,message_name,signal_name,raw_value)
+
+    @keyword
     def write_to_write_window(self, message):
         """Write a message to the CANoe write window."""
         self.canoe_inst.write_text_in_write_window(message)
