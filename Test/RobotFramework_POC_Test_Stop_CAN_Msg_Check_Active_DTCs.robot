@@ -85,20 +85,34 @@ Test Set Hil Config and Radar States
 Test Stop Msg and Check Counter Value Freez
     [Documentation]  Verify Specific Message Stop on Bus
     ${found}=    Set Variable    False  # Initialize the found flag
+    ${Timeout_For_Check}=    Set Variable   10   # Setting timeout for checking the values for
+    # Get Signal Real Value Flowing on BUS before stopping the message
+    Log    Check the Signal Value before stopping the message...
+    ${Sig_Real_Val}=    Get Signal Value    ${BUS_CAN}    1    ${Msg_Name_RCMinfor1}    ${Signal_Name_RCMinfo1}    ${False_Logic}
+    Log  Value for Messsage ${Msg_Name_RCMinfor1} Signal ${Signal_Name_RCMinfo1} is ${Sig_Real_Val}.
     # Set System Var for stopping RCMinfo1 Message on CAN Bus
     Set System Variable    ${Msg_RCMInfo1_Canfd}     0
-    ${Sig_Real_Val}=    Get Signal Value    ${BUS_CAN}    9    ${Msg_Name_RCMinfor1}    ${Signal_Name_RCMinfo1}    ${False_Logic}
+    # Get Signal Real Value Flowing on BUS
+    ${Sig_Real_Val}=    Get Signal Value    ${BUS_CAN}    1    ${Msg_Name_RCMinfor1}    ${Signal_Name_RCMinfo1}    ${False_Logic}
     Log  Value for Messsage ${Msg_Name_RCMinfor1} Signal ${Signal_Name_RCMinfo1} is ${Sig_Real_Val}.
-    Sleep  10
+    Sleep  15
+    ${Sig_Real_Val_After_Wait}=    Get Signal Value    ${BUS_CAN}    1    ${Msg_Name_RCMinfor1}    ${Signal_Name_RCMinfo1}    ${False_Logic}
+    ${Counter}=     Set Variable   0
+    Log    Check whether Signal values from a Stopped message on the bus are frozen or not......
+     WHILE    ${Counter} <= ${Timeout_For_Check}
+           ${Sig_Real_Val}=    Get Signal Value    ${BUS_CAN}    1    ${Msg_Name_RCMinfor1}    ${Signal_Name_RCMinfo1}    ${False_Logic}
+           Sleep    1
+           IF    ${Sig_Real_Val_After_Wait} == ${Sig_Real_Val}
+                Log    Value for Signal ${Signal_Name_RCMinfo1} are ${Sig_Real_Val_After_Wait} and ${Sig_Real_Val}
+           ELSE
+                Log    Value for Signal ${Signal_Name_RCMinfo1} ${Sig_Real_Val_After_Wait} and ${Sig_Real_Val}
+                Should Be True    ${found}   Ooops there is Failure !!! Check the Log Section for Values....
+           END
+           ${Counter}   Evaluate    ${Counter}+1
 
-    ${Sig_Real_Val_After_Wait}=    Get Signal Value    ${BUS_CAN}    9    ${Msg_Name_RCMinfor1}    ${Signal_Name_RCMinfo1}    ${False_Logic}
-
-    IF    ${Sig_Real_Val} != ${Sig_Real_Val_After_Wait}
-         Log  FAIL: Value for ${Sig_Real_Val} and ${Sig_Real_Val_After_Wait} Got increamented thus Message on the Bus hasn't stopped.
-         Should Be True    ${found}
-    ELSE
-         Log  PASS: Value for ${Sig_Real_Val} and ${Sig_Real_Val_After_Wait} Found same thus Message got Stopped on Bus
-    END
+     END
+    # Set System Var for Resuming RCMinfo1 Message on CAN Bus
+    Set System Variable    ${Msg_RCMInfo1_Canfd}     1
 
 
 Test Initiate DOIP Connection
