@@ -111,8 +111,7 @@ Test Stop Msg and Check Counter Value Freez
            ${Counter}   Evaluate    ${Counter}+1
 
      END
-    # Set System Var for Resuming RCMinfo1 Message on CAN Bus
-    Set System Variable    ${Msg_RCMInfo1_Canfd}     1
+
 
 
 Test Initiate DOIP Connection
@@ -152,7 +151,8 @@ Test Read All DTCs and Segregate it by Status Active
     ${DTC_Resp_2C}  ${DTC_Resp_2F}   DTCs Status 2C 2F    ${RES_Split_Part_2}
     Log    2C DTCs are ${DTC_Resp_2C}
     Log    2F DTCs are ${DTC_Resp_2F}
-
+    # Set System Var for Resuming RCMinfo1 Message on CAN Bus
+    Set System Variable    ${Msg_RCMInfo1_Canfd}     1
 
 Test Disconnect DOIP
     [Documentation]  Verify DOIP is Disconnected
