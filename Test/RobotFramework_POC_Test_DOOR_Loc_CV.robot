@@ -143,7 +143,7 @@ Test Precondition check
     Set System Variable    ${Speed_value}    21
     Sleep    5
 
-Test Check Sub Test Case 1
+Test Check Sub Test Case 1 Checking Door Output
     [Documentation]  Verify "SRS_Deployment = not deployed,Door_Lock_SW = Lock,Keyless_Lock_Unlock = Lock,Speed_value = 21 kmph"
 
      # Set System Variables
@@ -156,8 +156,24 @@ Test Check Sub Test Case 1
      Log    Speed_value to 21kmph
      Set System Variable    ${Speed_value}    21
      Sleep    15
+     # Evaluating actual Ouptut Values Based on the Input values mentioend above
+     Compare System Variable Two Values in AND Condition    ${Driver_door_output}    1   ${Passenger_door_output}    1   10
 
-     Compare System Variable Two Values in AND Condition    ${Driver_door_output}    1   ${Passenger_door_output}    1   5
+Test Check Sub Test Case 2 Checking Door Output
+    [Documentation]  Verify "SRS_Deployment = not deployed,Door_Lock_SW = Lock,Keyless_Lock_Unlock = Lock,Speed_value = 21 kmph"
+
+     # Set System Variables
+     Log    SRS_Deployment to deployed
+     Set System Variable    ${SRS_Deployment}    1
+     Log    Door_Lock_SW to Lock
+     Set System Variable    ${Door_Lock_SW}    1
+     Log    Keyless_Lock_Unlock to Lock
+     Set System Variable    ${Keyless_Lock_Unlock}    1
+     Log    Speed_value to 21kmph
+     Set System Variable    ${Speed_value}    21
+     Sleep    15
+     # Evaluating actual Ouptut Values Based on the Input values mentioend above
+     Compare System Variable Two Values in AND Condition    ${Driver_door_output}    0   ${Passenger_door_output}    0   10
 
 
 Test Post Condition
